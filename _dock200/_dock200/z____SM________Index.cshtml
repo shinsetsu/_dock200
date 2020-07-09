@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
+    <script src="~/port19/jQuery.js"></script>
+
+
+
+    @*<link href="~/port19/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+
+        <script src="~/port19/SyntaxHighlighter/shCore.js"></script>
+        <script src="~/port19/SyntaxHighlighter/shBrushPlain.js"></script>
+        <script src="~/port19/SyntaxHighlighter/shBrushPython.js"></script>
+        <script src="~/port19/SyntaxHighlighter/shBrushCpp.js"></script>
+        <link href="~/port19/SyntaxHighlighter/shThemeRDark.css" rel="stylesheet" />*@
+
+
+
+
+    <link href="~/port19.css" rel="stylesheet" />
+</head>
+
+<body class="body">
+    <div class="bg"></div>
+
+    <bg><img src="~/port19/Castle.png" /></bg>
+
+    @*<script>
+            $(document).ready(function () {
+                //$.get("/shinLinks", function (data) { document.getElementById('main').innerHTML += data })
+
+
+                var headerHeight = $('header').height()
+                //console.log(headerHeight)
+
+                $(`main`).css('margin-top', headerHeight + 'px')
+            })// end of DocumentReady
+
+        </script>*@
+
+
+
+    @if (ViewBag.ApplyDark != null && ViewBag.ApplyDark == true)        {
+    <script>
+
+        
+             document.getElementById("BgLight").checked = true;
+    </script>
+    <style>
+        html, html * {
+            color: #eeeeee !important;
+            background-color: #292929 !important;
+        }
+
+        img, video {
+            z-index: 1
+        }
+
+        * {
+            border-color: #555555 !important
+        }
+
+        cite, cite * {
+            color: #029833 !important
+        }
+
+        :link, :link * {
+            color: #8db2e5 !important
+        }
+
+        input, textarea {
+            background-color: #333333 !important
+        }
+
+        a {
+            background-color: rgba(255, 255, 255, 0.01) !important
+        }
+
+        :visited, :visited * {
+            color: rgb(211, 138, 138) !important
+        }
+
+        html, html::before, body, body::before, input, select, button {
+            background-image: none !important
+        }
+
+        video {
+            background-color: transparent !important;
+        }
+    </style>
+
+
+
+
+    }
+
+    <header id="header">
+        <shinlog>    </shinlog> 
+        <nameTitle id="">            <a href="/">  Zach Johnson  </a>  +1 502.381.3124  <a id="nameTitleEmail" href="mailto:shinsetsu@protonmail.com">shinsetsu@protonmail.com </a>        </nameTitle>
+        <a class="shinsetsu">           し<br />  ん <br /> せ<br /> つ        </a>
+    </header>
+
+    <consoleLog>@*ConsoleLog*@</consoleLog>
+
+
+    @await Html.PartialAsync("zz_shinL_i_n_k_s.cshtml")
+
+    <div style="clear:both"></div>
+
+    <siteMetrics>
+        <ul>
+
+            <li> IsDebug: @ViewBag.IsDebug</li>
+            <li> EventsFiredDebug: @ViewBag.pageViewsDebug</li>
+            <li>EventsFiredRelease: @ViewBag.pageViewsRelease</li>
+
+            <li> Mac: @ViewBag.Mac</li>
+            <li> Num Ip's Seen: @ViewBag.IpCount</li>
+            <li>   ClientIP: @ViewBag.ClientIP</li>
+        </ul>
+
+
+    </siteMetrics>
+
+    <div style="clear:both;"></div>
+    @*<■■■■■■■■■■■■■■■■■■___~~~~~~~~~~~~~~~:R_I_G_H_T_mainↇ _☻☻■_⅐_⅑_⅒_⅓_⅔_⅕_⅖_⅗_⅘_⅙_⅚_■_■_⅛_■☻☻>*@
+
+
+    @*  <╒⦧________________________~■■■■■~~~:R_I_G_H_T_☻☻■■■■■■■■■_⅐_⅑_⅒_⅓_⅔_⅕_⅖_⅗_⅘_⅙_⅚_■_■_⅛_■☻■☻■⦖⦕⦖⦕⦕⦖⦖⦕⦕⦖⦖⦕⦕⦖⦖⦕⦕⦖--⦢⦒>*@
+
+
+
+
+
+
+
+    @*<_☻☻■_⅐_⅑_⅒_⅓_⅔_⅕_⅖_⅗_⅘_⅙_⅚_■_■_⅛_■☻■☻■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■___:L_E_F_T_____■____main____--------------------------------------------------------■■■■■■>*@
+    <main id="main">
+        @RenderBody()
+
+
+        @*  </■■■■■■■■■■■■■■■■■■___:L_E_F_T____---------------------------------------------------------------------------------------------■■■■■■>*@
+
+
+    </main>
+    <div id="imgModal">
+        <div id="imgModalA">
+
+
+            <nav><i id="imgModalLeft">⛡</i></></nav>
+            <nav><i id="imgModalRight">⛡</i></nav>
+            <div id="imgModalClose">┼</div>
+
+
+            <div id="imgModalQW">
+                <div id="imgModalBody">
+                    <div>  <img /></div>
+                    <div id="imgModalBodyText">
+                        <h1>    H1              </h1>
+                        <h2>    h2              </h2>
+                        <p>   Asside Text;      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div style="position:fixed; bottom:2%; right:1.5%;z-index:103">
+
+            <a href="https://github.com/shinsetsu" target="_blank" id="GitShinsetsu" class="gitIcon" style="border:none;">
+                <span style="margin-right:54%;color:black;font-size:13px;text-shadow:none;margin-right:-2%">        </span>
+                <svg style="margin-top:-2%;" class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

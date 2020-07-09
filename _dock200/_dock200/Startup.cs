@@ -29,7 +29,8 @@ namespace _dock200
 		{
 			services.AddDbContext<_DBC>(options =>
 			    options.UseSqlServer(
-				  Configuration.GetConnectionString("DefaultConnection")));
+				  Configuration.GetConnectionString("_DB")));
+
 			services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 			    .AddEntityFrameworkStores<_DBC>();
 			services.AddControllersWithViews();
@@ -37,9 +38,9 @@ namespace _dock200
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment _env)
 		{
-			if (env.IsDevelopment())
+			if (_env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 				app.UseDatabaseErrorPage();

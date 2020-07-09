@@ -1,0 +1,173 @@
+﻿@using _dock200.Models;
+
+<style type="text/css">
+
+
+    .shinLinks {
+        top: 5vh;
+        right: 2%;
+        position: fixed;
+        z-index: 9001;
+        color: #00f548d4;
+        width: auto;
+    }
+
+
+        .shinLinks a {
+            display: block;
+            font-weight: 400;
+            border: none;
+            text-decoration: none;
+            margin-right: .2%;
+            margin-bottom: .2vh;
+            color: rgba(255, 255, 255, 0.83);
+            font-size: .7vw;
+            letter-spacing: 1.7px;
+        }
+
+            .shinLinks a:hover {
+                color: #c0ff00;
+            }
+
+        .shinLinks img {
+            padding: 2%;
+            background: #005d76;
+            border-radius: .2vw;
+/*            float: right;*/
+            border: .5px solid #282828;
+        }
+
+            .shinLinks img:hover {
+                background: #00ff90;
+                border-radius: 1px;
+            }
+
+        .shinLinks i {
+            margin-right: .1%;
+        }
+
+
+
+    .debug a {
+        color: #000000d4 !important;
+    }
+
+    .debug {
+        background-image: none;
+    }
+
+
+    #Home {
+        position: fixed;
+        left: 0.4%;
+        top:0;
+        transform: scale(0.7);
+    }
+
+    #Files {
+        transform: scale(0.9);
+        opacity: .86;
+    }
+
+
+    #createLHicon {
+        font-size: 3vw;
+        line-height: 3vw;
+        color: #2adf34a8;
+        background: black;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .LHIcon {
+        position: fixed ;
+        top: 3vh;
+        height: 100vh;
+        left: 1.6vw;
+        display: block;
+        width:auto;
+        height:auto;
+    }
+    #LHIconHeader{
+        outline:1px solid red;
+        display:block;
+    }
+
+    #LHIconHeader:hover {
+        border: 1px solid green;
+    }
+</style>
+
+
+@{
+
+
+
+
+      List<shinLink> links = new List<shinLink>();
+      //links.Add("/", "Home", "Home", "_self", "", "");
+
+      //shinLink -> HrefS IdS DisplayTextS TargetS DownloadS FilenameS
+      //links.Add(new shinLink("/PDF", "PDF", "PDFTooling"));
+
+      //links.Add(new shinLink("/webTech", "webTech", "webTechSites"));
+      links.Add(new shinLink("/shinIps2", "shinIps2", "shinIps2"));
+      links.Add(new shinLink("/UITooling", "UITooling", "js", true));
+      links.Add(new shinLink("/Resume", "Resume", "Resume"));
+      links.Add(new shinLink("/Contact", "Contact", "Contact", true));
+      
+
+
+
+
+      links.Add(new shinLink("/UserSettings", "UserSettings", "UserSettings", true));
+      links.Add(new shinLink("/SysMetrics", "SysMetrics", "SysMetrics", true));
+
+
+}
+
+
+<nav class="shinLinks">
+    <a href="/" id="Home">   <img src="~/port19/Images/SVG/home-24px.svg" />     </a><br />
+
+
+
+
+
+
+
+
+
+
+
+    <br />
+
+    @foreach (var link in links)
+    {
+        if (link.debugBool == false)
+        {
+            <a href=@link.aHref id=@link.aId>        <i>/</i>@link.aDisplayText </a>
+        }
+    }
+    @*<a href="/" id="Home">   <img src="~/port19/Images/SVG/home-24px.svg" />            </a>*@
+
+    @* @*<a href="/WebTechURLs" id="WebTechURLs"> <i>/</i>WebTechURLs</a>*@
+    @* <a href="/StockItem" id="StockItem"> <i>/</i>StockItem                </a>*@
+    @*   <a href="/Articles" id="Articles"> <i>/</i>Articles                </a>*@
+
+
+    @if (ViewBag.IsDebug)
+    {<debug class="debug">
+            @foreach (var link in links)
+            {
+                if (link.debugBool == true)
+                {<a href=@link.aHref id=@link.aId><i>/</i>@link.aDisplayText </a>}
+        }
+        </debug>}
+
+
+
+</nav>
+
+

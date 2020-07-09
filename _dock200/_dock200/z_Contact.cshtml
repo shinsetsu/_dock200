@@ -1,0 +1,215 @@
+﻿@model IEnumerable<_port197.Models.shinEmail>
+
+
+@{
+    Layout = "z____SM________Index.cshtml";
+}
+
+
+
+
+<style>
+    main {
+        width: 70%;
+        max-width: 800px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #ContactInput {
+        background-color: rgba(0, 0, 0, 0.39);
+        border-radius: 8px;
+        padding: 5% 8%;
+        padding-top: 0;
+    }
+
+    input {
+        height: 5vh;
+        width: auto;
+        background: none;
+        margin: 2% 0%;
+        padding: 0 5%;
+        background-color: rgba(0, 0, 0, 0.59);
+        border: 1px solid #d14caf;
+        color: #b0b0b0;
+        letter-spacing: 0.5px;
+    }
+
+    textarea {
+        height: 30vh;
+        width: 100%;
+        display: block;
+        background: none;
+        margin: 2% 0%;
+        background-color: rgba(0, 0, 0, 0.39);
+        border: 1px solid #99aa00;
+        border-bottom-left-radius: 5vw;
+        color: #b0b0b0;
+        letter-spacing: 0.5px;
+        outline: none; /* removes the default outline */
+    }
+
+        textarea:focus {
+            border-bottom-left-radius: 5vw;
+            padding: .5% 1%;
+        }
+
+    #FromEmail {
+        width: 100%;
+        height: 8vh;
+    }
+
+        #FromEmail:invalid {
+            outline: 1px solid red;
+        }
+
+    #FromName, #Subject {
+        width: 40%;
+        border: 1px solid #007994;
+    }
+
+    #FromName {
+        margin-left: 4%;
+    }
+
+    #Subject {
+        margin-left: 5%;
+        margin-right: 4%;
+        float: right;
+    }
+
+    #sendEmail:hover {
+        color: red;
+    }
+
+    h1 {
+        margin-bottom: 5vh;
+        text-align: right;
+    }
+
+    h2 {
+        margin-bottom: -4vh;
+        margin-left: 0.6vw;
+        position: relative;
+        font-size: 10px;
+        color: #2a7479;
+    }
+
+    #sendEmail {
+        background-color: #00000070;
+        color: #989898;
+        padding: 1.4% 2.4%;
+        border-radius: 10px;
+        float: right;
+    }
+
+    #errorMsg {
+        font-size: 10px;
+        margin-top: 0;
+        margin-bottom: 5%;
+        margin-left: 2%;
+        color: #4ad46e;
+    }
+</style>
+
+
+
+
+
+
+
+
+<div id="ContactInput">
+    <h1>
+        Shoot me an Email
+    </h1>
+    <p id="errorMsg">
+        We're not testing inputs atm, <br />
+        but it will be sent <br />
+        and loggedToDB if you send. <br />
+        <br />TY
+    </p>
+
+    <h2>From Email</h2>
+    <input type="email" id="FromEmail" placeholder="From Email" /><br />
+
+
+    <input type="text" id="FromName" placeholder="Name" />
+
+    <input type="text" id="Subject" placeholder="Subject" />
+
+    <textarea id="MessageBody" placeholder="MessageBody">
+    
+    </textarea>
+
+    <div id="sendEmail"> Send Email</div>
+</div>
+
+
+<script type="text/javascript">
+    console.log('fire')
+
+
+
+
+
+
+    $("#sendEmail").click(function () {
+        event.stopPropagation() // This stops propigation of the Click event.
+        $('consoleLog').html('SendEmail Triggered')
+
+        if (true) {
+
+            var email = {
+                "ToEmail": $('#ToEmail').val(),
+                "FromEmail": $('#FromEmail').val(),
+                "FromName": $('#FromName').val(),
+                "Subject": $('#Subject').val(),
+                "MessageBody": $('#MessageBody').val()
+            }
+
+            $('consoleLog').append(`<Br> FromEmail ${email.FromEmail}`)
+            $('consoleLog').append(`<Br> FromName ${email.FromName}`)
+            $('consoleLog').append(`<Br> Subject ${email.Subject}`)
+            $('consoleLog').append(`<Br> MessageBody ${email.MessageBody}`)
+
+
+
+            $.ajax({
+                type: "POST",
+                url: "/sendEmail",
+                data: JSON.stringify(email),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    console.log('Success Sending success')
+                    $('consoleLog').append(`<Br> Success`)
+                    //$('consoleLog').append(`<Br> Success ${respone.rString}`) //   This is for wiring a ReturnString from the function.
+                },
+                failure: function (response) {
+                    console.log('Failure Sending failure')
+                    $('consoleLog').append(`<Br> Failure `)
+                },
+                error: function (response) {
+                    console.log('Error Sending error')
+                    $('consoleLog').append(`<Br> Error`)
+                }
+            })
+        } else {
+            $('#errorMsg').html("Invalid Email")
+        }
+
+
+
+    })
+
+
+
+
+
+</script>
+
+
+<! ––//shinsetsu@protonmail.com || shinsetsuDev@gmail.com ||jzach.hte@gmail.com || zacheryjohnson@outlook.com || flatlands@protonmail.com-- !>

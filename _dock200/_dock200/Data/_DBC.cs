@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _dock200.Data
 {
-	public class ApplicationDbContext : IdentityDbContext
+	public class _DBC : IdentityDbContext
 	{
-		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+		public _DBC(DbContextOptions<_DBC> options)
 		    : base(options)
 		{
 		}

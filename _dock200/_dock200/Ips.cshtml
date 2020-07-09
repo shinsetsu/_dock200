@@ -1,0 +1,173 @@
+﻿@model IEnumerable<_dock200.Models.shinIps2>
+
+@{
+
+    Layout = "~/z____SM________Index.cshtml";
+}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<style>
+    main {
+        width: 90vw;
+        height: auto;
+        background: rgba(0, 0, 0, 0.35);
+        margin: auto;
+        padding: 3%;
+    }
+
+    .map {
+   
+        height: 200px;
+        width: 200px;
+    }
+</style>
+
+
+<script>
+
+    function mapAddress(mapElement, _Lat, _Long) {
+        var geocoder = new google.maps.Geocoder()
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var mapOptions = {
+                    zoom: 14,
+                    center: results[0].geometry.location,
+                    disableDefaultUI: true
+                }
+                var map = new google.maps.Map(document.getElementById(mapElement), mapOptions)
+                var marker = new google.maps.Marker({
+                    map: map,
+                    //position: results[0].geometry.location
+                    center: new google.maps.LatLng(_Lat, _Long),
+                })
+            } else {
+                console.log("Geocode was not successful for the following reason: " + status)
+            }
+        })
+    }
+
+</script>
+<br />
+<h1>shinIps2</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimesSeen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegionCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegionName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>          @item.id            </td>
+                <td>          @item.IP            </td>
+                <td>          @item.TimesSeen            </td>
+                <td>          @item.Type            </td>
+                <td>          @item.CountCode            </td>
+                <td>          @item.CountName            </td>
+                <td>          @item.RegionCode            </td>
+                <td>          @item.RegionName            </td>
+                <td>          @item.City                </td>
+                <td>          @item.Zip                </td>
+                <td>          @item.Latitude                </td>
+                <td>          @item.Longitude                </td>
+                <td>          @item.Notes                </td>
+                <td>
+                    @{if (@item.id <= 3)
+                        {
+                            var mapId = "m" + @item.id;
+                            var itemId = item.id;
+                            <div id=@(mapId)> @mapId  </div>
+
+                            <div id="map-@item.id" lat="@item.Latitude" lng="@item.Longitude" class="map">                        </div>
+                        }
+
+
+
+
+
+                    }
+
+
+
+
+
+                </td>
+            </tr>
+
+
+        }
+
+
+    </tbody>
+</table>
+
+<script>
+    var maps = []
+    var markers = []
+    function initMap() {
+        var $maps = $('.map')
+        $.each($maps, function (i, value) {
+            var uluru = { lat: parseFloat($(value).attr('lat')), lng: parseFloat($(value).attr('lng')) }
+
+            var mapDivId = $(value).attr('id')
+
+            maps[mapDivId] = new google.maps.Map(document.getElementById(mapDivId), {
+                zoom: 17,
+                center: uluru
+            })
+
+            markers[mapDivId] = new google.maps.Marker({
+                position: uluru,
+                map: maps[mapDivId]
+            })
+        })
+    }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?language=ru-Ru&key=AIzaSyBt64ypNVi_QxEW6oomYG-QK21dKOs8E8E&callback=initMap">
+</script>

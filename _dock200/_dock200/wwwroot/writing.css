@@ -1,0 +1,311 @@
+
+html {
+    box-sizing: border-box !important;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+body {
+    -ms-overflow-style: none;
+}
+
+main {
+    width: 100vw;
+    margin-top: 0px;
+    min-height: 100vh;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+p, span {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 200;
+    color: #8c8c8c;
+    text-shadow: 0.2px 0px 0.1px #494949b0;
+    text-shadow: 0.2px 0px 0.1px #000000de;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+#writingWrapper {
+    margin: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+    overflow: scroll;
+    overflow-X: hidden;
+    letter-spacing: -.51px;
+    font-size: 12px;
+    font-weight: 200;
+    font-family: 'IBM Plex Mono',monospace,'Open Sans',sans-serif;
+    background: url(/honeycomb3.png) repeat,radial-gradient(#06ac9e 41%,#123d64 100%);
+    background-image: url(/honeycomb3.png), radial-gradient(rgb(6, 172, 158) 41%, rgb(18, 61, 100) 100%);
+   padding-top:23vh;
+   
+  
+}
+.writing {
+    font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
+    font-size: 16px;
+    width: 71vw;
+    height: auto;
+    padding: 2% 5%;
+    border-radius: 4px;
+    box-shadow: -3px 0 0.3cm #000;
+    margin: auto;
+    /*margin-top: -8%;*/
+    padding-bottom: 2.7%;
+    background-color: rgba(18, 18, 19, 0.95);
+    background-color: rgba(193, 188, 173, 0.95);
+    background: linear-gradient(0.19turn, black, rgba(74, 74, 74, 0.94), rgba(54, 54, 58, 0.54));
+    display: block;
+    margin-left: 13%;
+}
+
+    .writing p {
+        font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
+        color: #9f9f9f;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 3.1vh;
+        letter-spacing: -0.51px;
+    }
+
+    .writing b {
+        font-size: 16px;
+        color: #c7c7c7;
+        letter-spacing: 0.4px;
+    }
+
+    .writing i {
+        font-size: 12px;
+    }
+
+    .writing h1 {
+        font-size: 24px;
+        font-weight: 400;
+        padding-left: 8%;
+        text-align: left;
+        margin-left: 5%;
+    }
+
+    .writing h3{
+        font-size:9px;
+        text-align:right;
+        margin-right:2vw;
+    }
+    .writing a {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+        letter-spacing: .1px;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid #36a000;
+        color: #72d38c;
+    }
+
+.trgText {
+    border-right: 11px solid #00a015;
+    margin-left: 5.5vw;
+    padding-left: 4vw;
+    background-color: #ffffff0f;
+    line-height: 2.4vh !important;
+    color: #000 !important;
+    padding: 3.8vh 1.9vw;
+    margin-bottom: 14vh;
+}
+
+    .trgText i {
+        font-weight: 600;
+        font-size:17px;
+    }
+
+.manager, .managerName {
+    background: rgba(0, 0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.73386449) 100%);
+    line-height: 1.9vh;
+    font-size: medium;
+    display: block;
+    text-align: right;
+    width: 100%;
+    padding-right: 3vw;
+}
+
+.manager {
+    color: #00cf73 !important;
+    letter-spacing: -0.2px;
+    padding-top: .5vh;
+    margin-top: 1vh;
+}
+
+.managerName {
+    padding-top: .2vh;
+    letter-spacing: 2px;
+    color: #eeeeee !important;
+}
+
+.extracting {
+    clear: both;
+    margin: 6vh 6vw;
+}
+
+    .extracting b {
+        text-align: center;
+        width: 86%;
+        display: block;
+        background-color: #00000042;
+        margin: auto;
+        padding: 2vh 0.7vw;
+        font-weight: 200;
+        border-radius: .2vw;
+        padding-bottom: 0.9vh;
+        font-size: 18px;
+        margin: 1vh 0;
+        margin-left: 2.4vw;
+    }
+
+.dataLifeCycle {
+    margin-right: 23.3vw;
+    font-size: large;
+    line-height: 3.1vh;
+    border-right: 4px solid #262626;
+    padding-right: 3vw;
+    padding-top: 5vh;
+    padding-bottom: 9vh;
+}
+
+#DRW {
+    border-radius: 200px;
+    width: 20.2%;
+    height: auto;
+    opacity: .95;
+    border-right: 2px solid #ff1493;
+    border-bottom: 1px solid #37cc11cc;
+    position: relative;
+    z-index: 9001;
+    margin-left: 85%;
+    margin-top: -19%;
+    transform: rotate(90deg);
+}
+
+.writing woldporth1 {
+    margin-bottom: 4vh;
+}
+
+.signatureTxt {
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    z-index: 1000;
+    /*border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);*/
+}
+
+.signature {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    position: static;
+    margin-top: -26%;
+    color: #a7a7a7;
+    right: 0;
+    margin-right: 5%;
+    z-index: 1000;
+    letter-spacing: .3px;
+    height: auto;
+    margin-bottom: 2%;
+    width: 30%;
+    float: right;
+    background-color: #ffffff21;
+    border-radius: 0.2vw;
+    padding-bottom: -5vh;
+}
+
+    .signature a {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+        color: rgba(0, 0, 0, 0.9) !important;
+        border-bottom: none !important;
+        font-weight: 200 !important;
+        line-height: 2.9vh;
+    }
+
+    .signature p {
+        text-indent: 0;
+        margin-left: 16%;
+        font-weight: 200;
+    }
+
+@media print {
+    body{
+        padding-top:5vh;
+    }
+
+    .signature{margin-top:-10evh;}
+    .writing {
+        width: 102vw;
+        margin: 0;
+        margin-top: -5vh;
+        margin-left: -5vw;
+        padding-top: 5vh;
+    }
+
+        .writing h1 {
+            font-size: 14px;
+        }
+
+        .writing p {
+            font-size: 11px;
+        }
+
+        .writing b {
+            font-size: 12px;
+        }
+
+    .printDisplayNone {
+        display: none;
+    }
+
+    .trgText {
+        margin-bottom: 10vh; 
+    }
+
+    .writing dataLifeCycle {
+        width: 83vw;
+    }
+
+    .writing extracting {
+        margin-top: 509px;
+    }
+    .writing woldporth1 {
+        margin-bottom: 0vh;
+    }
+
+    .writing h3{
+        font-size:9px!important;
+        text-align:right;
+    }
+    body {
+        overflow: hidden; /* Hide scrollbars */
+    }
+    #writingWrapper {
+        margin-top: -5vh !important;
+        padding: 1vh 3vw;
+        overflow: hidden; /* Hide scrollbars */
+    }
+/*@media print {
+    body {
+        margin-top: 50mm;
+        margin-bottom: 50mm;
+        margin-left: 0mm;
+        margin-right: 0mm
+    }
+}*/

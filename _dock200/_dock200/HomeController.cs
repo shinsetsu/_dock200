@@ -17,17 +17,19 @@ namespace _dock200.Controllers
 	{
 		//private readonly ILogger<HomeController> _logger;
 		private readonly _DBC _DBC;
-		private readonly IWebHostEnvironment _ENC;
+		private readonly IWebHostEnvironment _ENv;
 		private shinIps2 _shinIps2;
 
 
-		public HomeController(_DBC dbc, IWebHostEnvironment env) { _DBC = dbc; _ENC = env; }
+		public HomeController(_DBC dbc, IWebHostEnvironment env) { _DBC = dbc; _ENv = env; }
 		/////■■■■  O v e r R i d e s ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 		public override void OnActionExecuted(ActionExecutedContext context)
 		{
-			//base.OnActionExecuted(context);
 
+			base.OnActionExecuted(context);
+
+			ViewBag.IsDebug = false;
 
 
 			//ViewBag.IpCount = "";
@@ -40,7 +42,6 @@ namespace _dock200.Controllers
 
 			//if (true)//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
 			//{
-
 
 
 
@@ -84,6 +85,7 @@ namespace _dock200.Controllers
 
 
 		[Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
+		[Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
 
 
 		[Route("shinIps2")]
@@ -92,7 +94,12 @@ namespace _dock200.Controllers
 			//var Ips = await _DBC.shinIps2.ToListAsync();
 			var Ips = await _DBC.shinIps2.ToListAsync();
 
-			return View("Ips.cshtml", Ips);
+			
+			
+				return View("Ips.cshtml", Ips);
+			
+			
+		
 
 
 

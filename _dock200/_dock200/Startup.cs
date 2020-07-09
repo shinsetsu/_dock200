@@ -12,6 +12,7 @@ using _dock200.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Westwind.AspNetCore.LiveReload;
 
 namespace _dock200
 {
@@ -33,8 +34,17 @@ namespace _dock200
 
 			services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 			    .AddEntityFrameworkStores<_DBC>();
+
 			services.AddControllersWithViews();
 			services.AddRazorPages();
+			services.AddMvc();
+
+			services.AddLiveReload(config =>
+			{
+				// optional - use config instead
+				//config.LiveReloadEnabled = true;
+				//config.FolderToMonitor = Path.GetFullname(Path.Combine(Env.ContentRootPath,"..")) ;
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +54,7 @@ namespace _dock200
 			{
 				app.UseDeveloperExceptionPage();
 				app.UseDatabaseErrorPage();
+				app.UseLiveReload();  //Install-Package WestWind.AspnetCore.LiveReload      ---  This only Require Dotnet.watch.run
 			}
 			else
 			{

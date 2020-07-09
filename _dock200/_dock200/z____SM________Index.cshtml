@@ -7,23 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
+
 
 
 
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 
-    <script src="~/port19/jQuery.js"></script>
-
-
-
-    @*<link href="~/port19/SyntaxHighlighter/shCore.css" rel="stylesheet" />
-
-        <script src="~/port19/SyntaxHighlighter/shCore.js"></script>
-        <script src="~/port19/SyntaxHighlighter/shBrushPlain.js"></script>
-        <script src="~/port19/SyntaxHighlighter/shBrushPython.js"></script>
-        <script src="~/port19/SyntaxHighlighter/shBrushCpp.js"></script>
-        <link href="~/port19/SyntaxHighlighter/shThemeRDark.css" rel="stylesheet" />*@
+    <script src="~/jQuery.js"></script>
 
 
 
@@ -34,7 +24,7 @@
 <body class="body">
     <div class="bg"></div>
 
-    <bg><img src="~/port19/Castle.png" /></bg>
+    <bg><img src="~/Castle.png" /></bg>
 
     @*<script>
             $(document).ready(function () {
@@ -51,54 +41,55 @@
 
 
 
-    @if (ViewBag.ApplyDark != null && ViewBag.ApplyDark == true)        {
-    <script>
+    @if (ViewBag.ApplyDark != null && ViewBag.ApplyDark == true)
+    {
+        <script>
 
-        
-             document.getElementById("BgLight").checked = true;
-    </script>
-    <style>
-        html, html * {
-            color: #eeeeee !important;
-            background-color: #292929 !important;
-        }
 
-        img, video {
-            z-index: 1
-        }
+            document.getElementById("BgLight").checked = true
+        </script>
+        <style>
+            html, html * {
+                color: #eeeeee !important;
+                background-color: #292929 !important;
+            }
 
-        * {
-            border-color: #555555 !important
-        }
+            img, video {
+                z-index: 1
+            }
 
-        cite, cite * {
-            color: #029833 !important
-        }
+            * {
+                border-color: #555555 !important
+            }
 
-        :link, :link * {
-            color: #8db2e5 !important
-        }
+            cite, cite * {
+                color: #029833 !important
+            }
 
-        input, textarea {
-            background-color: #333333 !important
-        }
+            :link, :link * {
+                color: #8db2e5 !important
+            }
 
-        a {
-            background-color: rgba(255, 255, 255, 0.01) !important
-        }
+            input, textarea {
+                background-color: #333333 !important
+            }
 
-        :visited, :visited * {
-            color: rgb(211, 138, 138) !important
-        }
+            a {
+                background-color: rgba(255, 255, 255, 0.01) !important
+            }
 
-        html, html::before, body, body::before, input, select, button {
-            background-image: none !important
-        }
+            :visited, :visited * {
+                color: rgb(211, 138, 138) !important
+            }
 
-        video {
-            background-color: transparent !important;
-        }
-    </style>
+            html, html::before, body, body::before, input, select, button {
+                background-image: none !important
+            }
+
+            video {
+                background-color: transparent !important;
+            }
+        </style>
 
 
 
@@ -106,7 +97,7 @@
     }
 
     <header id="header">
-        <shinlog>    </shinlog> 
+        <shinlog>    </shinlog>
         <nameTitle id="">            <a href="/">  Zach Johnson  </a>  +1 502.381.3124  <a id="nameTitleEmail" href="mailto:shinsetsu@protonmail.com">shinsetsu@protonmail.com </a>        </nameTitle>
         <a class="shinsetsu">           し<br />  ん <br /> せ<br /> つ        </a>
     </header>
@@ -121,13 +112,37 @@
     <siteMetrics>
         <ul>
 
-            <li> IsDebug: @ViewBag.IsDebug</li>
-            <li> EventsFiredDebug: @ViewBag.pageViewsDebug</li>
-            <li>EventsFiredRelease: @ViewBag.pageViewsRelease</li>
+            @if (ViewBag.IsDebug != null || ViewBag.IsDebug != "")
+            {
+                <li> IsDebug: @ViewBag.IsDebug</li>
+            }
+            @if (ViewBag.pageViewsDebug != null || ViewBag.pageViewsDebug != "")
+            {
+                <li> EventsFiredDebug: @ViewBag.pageViewsDebug</li>
+            }
+            @if (ViewBag.EventsFiredRelease != null || ViewBag.EventsFiredRelease != "")
+            {
+                <li>EventsFiredRelease: @ViewBag.pageViewsRelease</li>
+            }
 
-            <li> Mac: @ViewBag.Mac</li>
-            <li> Num Ip's Seen: @ViewBag.IpCount</li>
-            <li>   ClientIP: @ViewBag.ClientIP</li>
+            @if (ViewBag.Mac != null || ViewBag.Mac != "")
+            {
+                <li> Mac: @ViewBag.Mac</li>
+            }
+            @if (ViewBag.IpCount != null || ViewBag.IpCount != "")
+            {
+                <li> Num Ip's Seen: @ViewBag.IpCount</li>
+            }
+            @if (ViewBag.ClientIP != null || ViewBag.ClientIP != "")
+            {
+                <li>   ClientIP: @ViewBag.ClientIP</li>
+            }
+
+
+
+
+
+
         </ul>
 
 

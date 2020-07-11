@@ -15,52 +15,6 @@ using System.Threading.Tasks;
 
 namespace _dock200.Models
 {
-	public class shinUserSessionSettings
-	{
-
-
-
-		[Key]
-		public string IP { get; set; }
-		public bool DarkStyle { get; set; }
-		public DateTime expirationTime { get; set; }
-
-		internal void InintUpsert(_DBC _dbC, string ip)
-		{
-
-
-			try
-			{
-				shinUserSessionSettings userSession = _dbC.shinUserSessionSettings.FirstOrDefault(m => m.IP == ip);
-				if (userSession == null)
-				{
-					userSession = new shinUserSessionSettings() { };
-					userSession.IP = ip;
-
-
-					_dbC.Add(userSession);
-
-				}
-				else
-				{
-					userSession.DarkStyle = true;
-					userSession.expirationTime = DateTime.UtcNow;
-					_dbC.Update(userSession);
-				}
-
-
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-
-
-
-		}
-	}
-
 
 	public class shinLink
 	{
@@ -111,13 +65,27 @@ namespace _dock200.Models
 
 	public class shinSiteMetrics
 	{
+
+
 		public interface IshinsiteMetrics
 		{
 			public void PageViewDebugIncrement();
 			public void PageViewReleaseIncrement();
+			public void init();
 		}
 
+		public void init(_DBC _DBC)
+		{
+			var metric = new shinSiteMetrics()
+			{
+				pageViewsDebug = 1,
+				pageViewsRelease = 1,
+				pageViewsEx = 1
+			};
 
+			_DBC.Add(metric);
+			_DBC.SaveChanges();
+	}
 
 
 		[Key] [DisplayName("Id}")] public int id { get; set; }
@@ -184,7 +152,7 @@ namespace _dock200.Models
 				}
 
 
-				
+
 				_dbContext.SaveChanges();
 			}
 			catch (Exception e)

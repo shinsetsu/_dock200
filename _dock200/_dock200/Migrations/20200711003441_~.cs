@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace _dock200.Data.Migrations
+namespace _dock200.Migrations
 {
     public partial class _ : Migration
     {
@@ -44,6 +45,20 @@ namespace _dock200.Data.Migrations
                 {
                     table.PrimaryKey("PK_shinSiteMetrics", x => x.id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "shinUserSessionSettings",
+                columns: table => new
+                {
+                    io = table.Column<string>(nullable: false),
+                    IP = table.Column<string>(nullable: true),
+                    DarkStyle = table.Column<bool>(nullable: false),
+                    expirationTime = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_shinUserSessionSettings", x => x.io);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -53,6 +68,9 @@ namespace _dock200.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "shinSiteMetrics");
+
+            migrationBuilder.DropTable(
+                name: "shinUserSessionSettings");
         }
     }
 }

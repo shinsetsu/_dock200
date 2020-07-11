@@ -14,6 +14,8 @@ namespace _dock200.Models
 	//https://ipstack.com/quickstart
 	public class shinIps2
 	{
+
+
 		[Key] [DisplayName("Id}")] public int id { get; set; }
 		public string IP { get; set; }
 		public int TimesSeen { get; set; }
@@ -32,9 +34,33 @@ namespace _dock200.Models
 
 
 		public string Notes { get; set; }
+		internal void init(_DBC _dbc)
+		{
+
+			shinIps2 shinIP = new shinIps2()
+			{
+				IP = "0.0.0.0.0",
+				TimesSeen = 0,
+				Type = "initIP",
+				CountCode = "code",
+				CountName = "countName",
+				RegionCode = "regionCode",
+				RegionName = "regionName",
+				City = "city",
+				Zip = "zip",
+				Latitude = "latitude",
+				Longitude = "longitude",
+				Notes = "notes"
+			};
+			_dbc.Add(shinIP);
+			_dbc.SaveChanges();
+
+		}
+
 		internal int CountIpsSeen(_DBC _DBC)
 		{
 			return _DBC.shinIps2.Select(x => x.IP).Count();
+
 
 		}
 

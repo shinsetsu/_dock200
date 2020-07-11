@@ -17,15 +17,31 @@ namespace _dock200.Controllers
 	{
 		//private readonly ILogger<HomeController> _logger;
 		private readonly _DBC _DBC;
-		private readonly IWebHostEnvironment _ENv;
+		private readonly IWebHostEnvironment _ENV;
 		private shinIps2 _shinIps2;
 
+		public HomeController(_DBC dbc, IWebHostEnvironment env)
+		{
+			_DBC = dbc; _ENV = env;
 
-		public HomeController(_DBC dbc, IWebHostEnvironment env) { _DBC = dbc; _ENv = env; }
+
+		}
+
+		private void initVariables(_DBC _DBC)
+		{
+			var shinIP2 = new shinIps2(); shinIP2.init(_DBC);
+			var metrics = new shinSiteMetrics(); metrics.init(_DBC);
+			
+
+		}
+
 		/////■■■■  O v e r R i d e s ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
 		public override void OnActionExecuted(ActionExecutedContext context)
 		{
+
+
+			initVariables(_DBC);
 
 			base.OnActionExecuted(context);
 
@@ -40,40 +56,34 @@ namespace _dock200.Controllers
 
 
 
-			if (true)//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
+			if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
+			{ ViewBag.IsDebug = true; }
+			else { ViewBag.IsDebug = false; }
+
+			if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
 			{
 
+				_shinIps2 = new shinIps2();
 
-
-				if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
-				{ ViewBag.IsDebug = true; }
-				else
+				ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
+				if (ViewBag.ClientIP != null)
 				{
-					ViewBag.IsDebug = false;
-
-					ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
-					if (ViewBag.ClientIP != null)
-					{
-						_shinIps2.UpsertIP(_DBC, Request.HttpContext.Connection.RemoteIpAddress.ToString());
-						ViewBag.IpCount = _shinIps2.CountIpsSeen(_DBC);
-					}
-					else { ViewBag.IpCount = 0; }
-
-
-
-					shinSiteMetrics siteMetrics = _DBC.shinSiteMetrics.FirstOrDefault();
-					siteMetrics.PageEventsIncrement(_DBC);
-					ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_DBC);
-					ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_DBC);
-					ViewBag.Mac = siteMetrics.GetMacAddress();
-
-					if (ViewBag.ClientIp != null)
-					{
-						shinUserSessionSettings userSessionSettings = new shinUserSessionSettings();
-						userSessionSettings.InintUpsert(_DBC, ViewBag.ClientIp);
-					}
-
+					_shinIps2.UpsertIP(_DBC, Request.HttpContext.Connection.RemoteIpAddress.ToString());
+					ViewBag.IpCount = _shinIps2.CountIpsSeen(_DBC);
 				}
+				else { ViewBag.IpCount = 0; }
+
+
+
+				shinSiteMetrics siteMetrics = _DBC.shinSiteMetrics.FirstOrDefault();
+				siteMetrics.PageEventsIncrement(_DBC);
+				ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_DBC);
+				ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_DBC);
+				ViewBag.Mac = siteMetrics.GetMacAddress();
+
+			
+
+
 			}
 		}
 

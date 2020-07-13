@@ -34,35 +34,10 @@ namespace _dock200.Models
 
 
 		public string Notes { get; set; }
-		internal void init(_DBC _dbc)
-		{
-
-			shinIps2 shinIP = new shinIps2()
-			{
-				IP = "0.0.0.0.0",
-				TimesSeen = 0,
-				Type = "initIP",
-				CountCode = "code",
-				CountName = "countName",
-				RegionCode = "regionCode",
-				RegionName = "regionName",
-				City = "city",
-				Zip = "zip",
-				Latitude = "latitude",
-				Longitude = "longitude",
-				Notes = "notes"
-			};
-			_dbc.Add(shinIP);
-			_dbc.SaveChanges();
-
-		}
-
-		internal int CountIpsSeen(_DBC _DBC)
-		{
-			return _DBC.shinIps2.Select(x => x.IP).Count();
-
-
-		}
+		internal void init(_DBC _DBC) {
+			if (_DBC.shinIps2.Select(x => x.id).Count() > 0)
+			{ shinIps2 shinIP = new shinIps2() { IP = "0.0.0.0.0", TimesSeen = 0, Type = "initIP", CountCode = "code", CountName = "countName", RegionCode = "regionCode", RegionName = "regionName", City = "city", Zip = "zip", Latitude = "latitude", Longitude = "longitude", Notes = "notes" }; _DBC.Add(shinIP); _DBC.SaveChanges(); } }
+		internal int CountIpsSeen(_DBC _DBC) { return _DBC.shinIps2.Select(x => x.IP).Count(); }
 
 		internal void UpsertIP(_DBC _DBC, string ip)
 		{
@@ -110,28 +85,6 @@ namespace _dock200.Models
 				else
 				{
 					shinIps2.TimesSeen++;
-					using (WebClient client = new WebClient())
-					{
-						string s = client.DownloadString
-							("http://api.ipstack.com/24.12.63.159?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
-
-
-						JObject jObject = JObject.Parse(s);
-						JToken IP = jObject["ip"];
-
-
-						shinIps2.Type = jObject["type"].ToString();
-						shinIps2.CountCode = jObject["country_code"].ToString();
-						shinIps2.CountName = jObject["country_name"].ToString();
-						shinIps2.RegionCode = jObject["region_code"].ToString();
-						shinIps2.RegionName = jObject["region_name"].ToString();
-						shinIps2.City = jObject["city"].ToString();
-						shinIps2.Zip = jObject["zip"].ToString();
-						shinIps2.Latitude = jObject["latitude"].ToString();
-						shinIps2.Longitude = jObject["longitude"].ToString();
-
-
-					}
 					_DBC.Update(shinIps2);
 				}
 

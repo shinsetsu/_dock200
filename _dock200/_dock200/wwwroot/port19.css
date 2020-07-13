@@ -409,7 +409,7 @@ footer p {
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
     margin-left: 1vw;
-    width: 88vw;
+    width: 85vw;
     position: static;
     max-width: 90vw;
     height: 92vh;
@@ -1257,7 +1257,7 @@ pre {
     }
 .zjohnson {
     width: auto;
-    height: 130%;
+    height: 60vh;
     margin-top: -30%;
     opacity: 0.8;
     border-bottom-left-radius: 11px;

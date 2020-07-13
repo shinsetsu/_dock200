@@ -29,9 +29,6 @@ namespace _dock200.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ConvictedofFelony")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CurrentlyStudent")
                         .HasColumnType("nvarchar(max)");
 

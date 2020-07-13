@@ -1027,52 +1027,6 @@ imgRespon {
     border-bottom-right-radius: 0;
 }
 
-.flexCol {
-    width: 47vw;
-    display: flex;
-    justify-content: start;
-    border-left: .26vw solid #001a23;
-    width: 69.2vw;
-    background-color: #00bee617;
-    margin-left: 1vw;
-    margin-left: 2.7vw;
-    padding: 1.3vh 2vw;
-    border-radius: .5vw;
-    padding-left: 0;
-    border-top-right-radius: 50vw;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 2vw;
-}
-    /*.flexCol:nth-of-type(2) {
-        width: 17vw !important;
-    }*/
-    .flexCol p {
-        margin-right: 0vw;
-        line-height: 2.2vh;
-    }
-
-        .flexCol p:first-of-type {
-            margin-right: 3vw;
-        }
-
-    .flexCol div {
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        margin: 0;
-    }
-
-        .flexCol div p {
-            padding-bottom: 0;
-            margin: 0;
-            line-height: 0;
-            vertical-align: central;
-        }
-
-    .flexCol b:first-of-type {
-        margin-left: 2.3vw;
-    }
 
 .and {
     color: #050505;
@@ -1080,11 +1034,6 @@ imgRespon {
     font-size: large;
 }
 
-.flexCol b {
-    color: #009a61;
-    font-weight: 500;
-    letter-spacing: -0.056vw;
-}
 
 #imgModalContent {
     margin: 2.5% auto;

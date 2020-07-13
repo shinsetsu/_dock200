@@ -12,7 +12,7 @@ namespace _dock200.Models
 
 		public interface IRefEmpAp_M { }
 		public RefEmpAp_M() { }     //Constructor
-		public RefEmpAp_M(DateTime todayDate, string fN, string lN, string mI, string stAddress, string city, string zipcode, string phone, string email, string permAddress, string positionAppliedFor, string workWeekends, string workEvenings, string legallyEligibleEmp, string transportation, string convictedofFelony, string highestLevelAtended, string highestDegree, string school, string currentlyStudent, string studentCapacity, string employer, DateTime eMPDateFrom, DateTime eMPDateTo, string eMPCity, string eMPState, string eMPPhone, string eMPManager, string mayWeContact, string signature, DateTime sigDate, DateTime dateRecieved, DateTime interviewDate, string specialNotes) { TodayDate = todayDate; FN = fN; LN = lN; MI = mI; StAddress = stAddress; City = city; Zipcode = zipcode; Phone = phone; Email = email; PermAddress = permAddress; PositionAppliedFor = positionAppliedFor; WorkWeekends = workWeekends; WorkEvenings = workEvenings; LegallyEligibleEmp = legallyEligibleEmp; Transportation = transportation; ConvictedofFelony = convictedofFelony; HighestLevelAtended = highestLevelAtended; HighestDegree = highestDegree; School = school; CurrentlyStudent = currentlyStudent; StudentCapacity = studentCapacity; Employer = employer; EMPDateFrom = eMPDateFrom; EMPDateTo = eMPDateTo; EMPCity = eMPCity; EMPState = eMPState; EMPPhone = eMPPhone; EMPManager = eMPManager; MayWeContact = mayWeContact; Signature = signature; SigDate = sigDate; DateRecieved = dateRecieved; InterviewDate = interviewDate; SpecialNotes = specialNotes; }
+		public RefEmpAp_M(DateTime todayDate, string fN, string lN, string mI, string stAddress, string city, string zipcode, string phone, string email, string permAddress, string positionAppliedFor, string workWeekends, string workEvenings, string legallyEligibleEmp, string transportation, string convictedofFelony, string highestLevelAtended, string highestDegree, string school, string currentlyStudent, string studentCapacity, string employer, DateTime eMPDateFrom, DateTime eMPDateTo, string eMPCity, string eMPState, string eMPPhone, string eMPManager, string mayWeContact, string signature, DateTime sigDate, DateTime dateRecieved, DateTime interviewDate, string specialNotes) { TodayDate = todayDate; FN = fN; LN = lN; MI = mI; StAddress = stAddress; City = city; Zipcode = zipcode; Phone = phone; Email = email; PermAddress = permAddress; PositionAppliedFor = positionAppliedFor; WorkWeekends = workWeekends; WorkEvenings = workEvenings; LegallyEligibleEmp = legallyEligibleEmp; Transportation = transportation; HighestLevelAtended = highestLevelAtended; HighestDegree = highestDegree; School = school; CurrentlyStudent = currentlyStudent; StudentCapacity = studentCapacity; Employer = employer; EMPDateFrom = eMPDateFrom; EMPDateTo = eMPDateTo; EMPCity = eMPCity; EMPState = eMPState; EMPPhone = eMPPhone; EMPManager = eMPManager; MayWeContact = mayWeContact; Signature = signature; SigDate = sigDate; DateRecieved = dateRecieved; InterviewDate = interviewDate; SpecialNotes = specialNotes; }
 
 
 		[Key] [DisplayName("Id}")] public int id { get; set; }
@@ -32,8 +32,7 @@ namespace _dock200.Models
 		public string WorkEvenings { get; set; }
 		public string LegallyEligibleEmp { get; set; }
 		public string Transportation { get; set; }
-		public string ConvictedofFelony { get; set; }
-
+		
 		public string HighestLevelAtended { get; set; }
 		public string HighestDegree { get; set; }
 		public string School { get; set; }

@@ -15,7 +15,6 @@
 
 
 
-@await Html.PartialAsync("/Areas/Refinery/Ref_C.cshtml")
 
 <page size="A4" id="resume">
     <div id="res">
@@ -47,6 +46,7 @@
 
             <div class="resBody">
 
+                @await Html.PartialAsync("/Areas/Refinery/Ref_E.cshtml")
             </div>
         </div>
     </div>
@@ -61,7 +61,8 @@
 <h1>RefEmpApp_Ls</h1>
 
 
-<table class="table">
+<table class="table"><field>
+    
     <thead>
         <tr>
             <th>                @Html.DisplayNameFor(model => model.TodayDate)            </th>
@@ -79,7 +80,6 @@
             <th>                @Html.DisplayNameFor(model => model.WorkEvenings)            </th>
             <th>                @Html.DisplayNameFor(model => model.LegallyEligibleEmp)            </th>
             <th>                @Html.DisplayNameFor(model => model.Transportation)            </th>
-            <th>                @Html.DisplayNameFor(model => model.ConvictedofFelony)            </th>
             <th>                @Html.DisplayNameFor(model => model.HighestLevelAtended)            </th>
             <th>                @Html.DisplayNameFor(model => model.HighestDegree)            </th>
             <th>                @Html.DisplayNameFor(model => model.School)            </th>
@@ -122,7 +122,6 @@
                 <td>                @Html.DisplayFor(modelItem => item.WorkEvenings)            </td>
                 <td>                @Html.DisplayFor(modelItem => item.LegallyEligibleEmp)            </td>
                 <td>                @Html.DisplayFor(modelItem => item.Transportation)            </td>
-                <td>                @Html.DisplayFor(modelItem => item.ConvictedofFelony)            </td>
                 <td>                @Html.DisplayFor(modelItem => item.HighestLevelAtended)            </td>
                 <td>                @Html.DisplayFor(modelItem => item.HighestDegree)            </td>
                 <td>                @Html.DisplayFor(modelItem => item.School)            </td>

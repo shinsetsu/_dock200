@@ -88,9 +88,21 @@ namespace _dock200.Controllers
 		}
 
 		[Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
-		
+
 		[Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
-		[Route("Ref")] [Route("Refinery")] public async Task<IActionResult> Ref() { var Ref = await _DBC.RefEmpAp_M.ToListAsync(); return View("Ref.cshtml", Ref); }		[Route("shinIps2")]
+		[Route("Ref")]
+		[Route("Refinery")]
+		public async Task<IActionResult> Ref()
+		{
+			var Ref = await _DBC.RefEmpAp_M.ToListAsync();
+				if (Ref ==null) { var Ref2= new RefEmpAp_M() { }; return View("Ref.cshtml", Ref2); }
+
+
+
+
+			return View("Ref.cshtml", Ref);
+		}
+		[Route("shinIps2")]
 
 
 

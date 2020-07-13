@@ -31,7 +31,7 @@ namespace _dock200.Controllers
 		{
 			var shinIP2 = new shinIps2(); shinIP2.init(_DBC);
 			var metrics = new shinSiteMetrics(); metrics.init(_DBC);
-			
+
 
 		}
 
@@ -81,18 +81,19 @@ namespace _dock200.Controllers
 				ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_DBC);
 				ViewBag.Mac = siteMetrics.GetMacAddress();
 
-			
+
 
 
 			}
 		}
 
 		[Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
-		[Route("Ref")] public IActionResult Ref() { return View("Ref.cshtml"); }
+		
 		[Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
+		[Route("Ref")] [Route("Refinery")] public async Task<IActionResult> Ref() { var Ref = await _DBC.RefEmpAp_M.ToListAsync(); return View("Ref.cshtml", Ref); }		[Route("shinIps2")]
 
 
-		[Route("shinIps2")]
+
 		public async Task<IActionResult> shinIps2()
 		{
 			//var Ips = await _DBC.shinIps2.ToListAsync();

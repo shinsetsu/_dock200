@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _dock200.Data;
 
 namespace _dock200.Migrations
 {
     [DbContext(typeof(_DBC))]
-    partial class _DBCModelSnapshot : ModelSnapshot
+    [Migration("20200713074352_RefinerEmpApp")]
+    partial class RefinerEmpApp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

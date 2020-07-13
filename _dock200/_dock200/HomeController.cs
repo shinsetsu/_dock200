@@ -60,7 +60,7 @@ namespace _dock200.Controllers
 			{ ViewBag.IsDebug = true; }
 			else { ViewBag.IsDebug = false; }
 
-			if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
+			if (false || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
 			{
 
 				_shinIps2 = new shinIps2();
@@ -88,6 +88,7 @@ namespace _dock200.Controllers
 		}
 
 		[Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
+		[Route("Ref")] public IActionResult Ref() { return View("Ref.cshtml"); }
 		[Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
 
 

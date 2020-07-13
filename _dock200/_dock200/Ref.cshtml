@@ -1,0 +1,100 @@
+﻿
+
+@{
+    Layout = "z____SM________Index.cshtml";
+}
+    <link href="~/ReF.min.css" rel="stylesheet" />
+<script src="~/printThis.js"></script>
+
+
+<style>
+    page {
+        margin-top: 5%;
+    }
+</style>
+
+
+
+
+
+<page size="A4" id="resume">
+    <div id="res">
+
+        <div id="resHead">
+            <div id="resHeadName">
+
+
+
+            </div>
+            <div id="resHeadContact">
+                <ul>
+                   
+                </ul>
+            </div>
+            <div class="w-25">
+             <div>              </div>
+        </div>
+
+        <div class="redBodyWrapper">
+            <div class="resBody">
+             
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="resBody">
+               
+            </div>
+        </div>
+    </div>
+
+
+
+</page>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- printThis -->
+<script src="~/printThis.js"></script>
+
+<script>
+    $('#print').click(function () {
+
+        //https://jasonday.github.io/printThis/#demos
+
+        $('page').printThis(
+            {
+                printContainer: false,       // print outer container/$.selector
+                importCSS: true,            // import parent page css
+                importStyle: true,         // import style tags
+                removeInline: false,        // remove inline styles from print elements
+                loadCSS: "/Resume.css",                // path to additional css file - use an array [] for multiple
+                removeScripts: false,       // remove script tags from print content
+            })
+
+
+
+
+    })
+
+
+
+
+</script>
+

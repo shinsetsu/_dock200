@@ -21,5 +21,8 @@ namespace _dock200.Data
 		public DbSet<_dock200.Models.shinUserSessionSettings> shinUserSessionSettings { get; set; }
 
 
+
+		public DbSet<_dock200.Models.RefEmpAp_M> RefEmpAp_M { get; set; }
+
 	}
 }

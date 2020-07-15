@@ -1413,9 +1413,13 @@ pre {
     }
 
     .bodyText {
-        width:90%;
-        margin-left:5%!important;
-        outline:1px solid blue;
+        width: 90%;
+        margin-left: 5% !important;
         padding: .5% 2% !important;
+    }
+
+    .writing {
+        width: 95vw !important;
+        margin: auto !important;
     }
 }

@@ -1,4 +1,8 @@
-﻿@model IEnumerable<_dock200.Models.shinIps2>
+﻿@using _dock200.Models
+@using System.Reflection
+@{var Ip = new shinIps2(); }
+
+@model IEnumerable<_dock200.Models._shinIps2VM>
 
 @{
 
@@ -15,7 +19,6 @@
     }
 
     .map {
-   
         height: 200px;
         width: 200px;
     }
@@ -55,61 +58,39 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            
+            @foreach (var Property in typeof(shinIps2).GetProperties()) {
 
-                @Html.DisplayNameFor(model => model.id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IP)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimesSeen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CountCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CountName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegionCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegionName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Zip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Latitude)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Longitude)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Notes)
-            </th>
+            <th>            @Property.Name            </th>
+            }
+            @*<th>                @Html.DisplayNameFor(model => model.IP)              </th>
+            <th>                @Html.DisplayNameFor(model => model.SeenDate)        </th>
+            <th>                @Html.DisplayNameFor(model => model.TimesSeenCount)  </th>
+            <th>                @Html.DisplayNameFor(model => model.Type)            </th>
+            <th>                @Html.DisplayNameFor(model => model.CountCode)       </th>
+            <th>                @Html.DisplayNameFor(model => model.CountName)       </th>
+            <th>                @Html.DisplayNameFor(model => model.State)           </th>
+            <th>                @Html.DisplayNameFor(model => model.StateABR)        </th>
+            <th>                @Html.DisplayNameFor(model => model.City)            </th>
+            <th>                @Html.DisplayNameFor(model => model.Zip)             </th>
+            <th>                @Html.DisplayNameFor(model => model.Latitude)        </th>
+            <th>                @Html.DisplayNameFor(model => model.Longitude)       </th>
+            <th>                @Html.DisplayNameFor(model => model.Notes)           </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
+        @*@foreach (var item in Model) {
             <tr>
                 <td>          @item.id            </td>
                 <td>          @item.IP            </td>
-                <td>          @item.TimesSeen            </td>
+                <td>          @item.SeenDate            </td>
+                <td>          @item.TimesSeenCount            </td>
                 <td>          @item.Type            </td>
                 <td>          @item.CountCode            </td>
                 <td>          @item.CountName            </td>
-                <td>          @item.RegionCode            </td>
-                <td>          @item.RegionName            </td>
+                <td>          @item.State            </td>
+                <td>          @item.StateABR            </td>
                 <td>          @item.City                </td>
                 <td>          @item.Zip                </td>
                 <td>          @item.Latitude                </td>
@@ -139,7 +120,7 @@
             </tr>
 
 
-        }
+        }*@
 
 
     </tbody>

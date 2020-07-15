@@ -27,10 +27,10 @@ namespace _dock200.Controllers
 
 		}
 
-		private void initVariables(_DBC _DBC)
+		private void initVariables( )
 		{
-			var shinIP2 = new shinIps2(); shinIP2.init(_DBC);
-			var metrics = new shinSiteMetrics(); metrics.init(_DBC);
+			//var shinIP2 = new shinIps2(); shinIP2.init();
+			//var metrics = new shinSiteMetrics(); metrics.init();
 
 
 		}
@@ -41,18 +41,18 @@ namespace _dock200.Controllers
 		{
 
 
-			initVariables(_DBC);
+			//initVariables(_DBC);
 
 			base.OnActionExecuted(context);
 
 			ViewBag.IsDebug = false;
 
 
-			//ViewBag.IpCount = "";
-			//ViewBag.pageViewsDebug = "";
-			//ViewBag.pageViewsRelease = "";
-			//ViewBag.ClientIP = "";
-			//ViewBag.IsDebug = true;
+			ViewBag.IpCount = "";
+			ViewBag.pageViewsDebug = "";
+			ViewBag.pageViewsRelease = "";
+			ViewBag.ClientIP = "";
+			ViewBag.IsDebug = true;
 
 
 
@@ -68,8 +68,8 @@ namespace _dock200.Controllers
 				ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
 				if (ViewBag.ClientIP != null)
 				{
-					_shinIps2.UpsertIP(_DBC, Request.HttpContext.Connection.RemoteIpAddress.ToString());
-					ViewBag.IpCount = _shinIps2.CountIpsSeen(_DBC);
+					_shinIps2.InsertIP( Request.HttpContext.Connection.RemoteIpAddress.ToString());
+					//ViewBag.IpCount = _shinIps2.CountIpsSeen();
 				}
 				else { ViewBag.IpCount = 0; }
 
@@ -103,14 +103,12 @@ namespace _dock200.Controllers
 			return View("Ref.cshtml", Ref);
 		}
 		[Route("shinIps2")]
-
-
-
 		public async Task<IActionResult> shinIps2()
 		{
+			var Ip = new shinIps2() { };
 			//var Ips = await _DBC.shinIps2.ToListAsync();
 			var Ips = await _DBC.shinIps2.ToListAsync();
-
+			var rowCount = Ip.GetIpRowCount();
 
 
 			return View("Ips.cshtml", Ips);

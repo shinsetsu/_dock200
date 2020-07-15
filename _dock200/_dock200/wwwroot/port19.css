@@ -97,7 +97,6 @@ a {
 debug a {
     font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif !important;
     font-weight: 200 !important;
-   
     line-height: 18px;
     font-size: 12px !important;
 }
@@ -412,7 +411,7 @@ footer p {
     width: 85vw;
     position: static;
     max-width: 90vw;
-    height: 92vh;
+    height: 100%;
 }
 
     #containerA .tb {
@@ -434,11 +433,10 @@ consoleLog {
     left: 7%;
     font-size: 2vh;
 }
-
+/*
 #containerA li {
     font-size: 1.2vw;
-    font-weight: 900;
-    line-height: 3.1vh;
+        line-height: 3.1vh;
     letter-spacing: -0.8px;
     margin-bottom: 1.9vh;
     color: #000000;
@@ -447,18 +445,9 @@ consoleLog {
     padding-left: 6vw;
     padding-right: 8vw;
 }
+*/
 
-    #containerA li::before {
-        content: "•";
-        color: red;
-    }
 
-    #containerA li b {
-        color: black;
-        font-weight: 600;
-        letter-spacing: -2px;
-        font-size: 18px;
-    }
 
 .resumeLink {
     border-bottom: none;
@@ -482,6 +471,8 @@ consoleLog {
     position: relative;
     z-index: 2;
 }
+
+
 
 .imgRow {
     display: flex;
@@ -588,6 +579,7 @@ consoleLog {
 
 #introText {
     font-size: 1.5vw;
+    height: 100%;
     color: #a4a4a4;
     letter-spacing: 0.04vw;
     line-height: 3.5vh;
@@ -634,10 +626,15 @@ consoleLog {
 
 
 .aspUmbrella {
-    margin-left: 10%;
+    padding-left: 10%;
+    padding-bottom: 5vh;
     word-spacing: 13px;
     line-height: 24px;
     word-spacing: -4px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .39);
 }
 
     .aspUmbrella h1 {
@@ -646,6 +643,27 @@ consoleLog {
         letter-spacing: .1vw;
         word-spacing: .15vw;
     }
+
+    .aspUmbrella li {
+        color: #838383;
+        font-weight: 100;
+        font-size: 1.6vh;
+        line-height: 2.7vh;
+        padding-bottom: 1.5vh;
+    }
+
+        .aspUmbrella li::before {
+            content: "•";
+            color: red;
+        }
+
+        .aspUmbrella li b {
+            color: black;
+            font-weight: 600;
+            letter-spacing: -2px;
+            font-size: 18px;
+        }
+
 
 .siteBulliten {
     font-size: 10px;
@@ -758,6 +776,7 @@ siteMetrics {
     line-height: 24px;
     bottom: 5%;
     right: 2vh;
+    z-index: -1000;
 }
 
     siteMetrics ul {
@@ -768,6 +787,7 @@ siteMetrics {
         margin-top: -10px;
         padding-top: 0;
     }
+
 
 shinLog {
     position: fixed;
@@ -1204,14 +1224,15 @@ pre {
         top: 5%;
         pointer-events: none;
     }
+
 .zjohnson {
     width: auto;
     height: 60vh;
-    margin-top: -10%;
     opacity: 0.8;
     border-bottom-left-radius: 11px;
     border-bottom-right-radius: 39px;
 }
+
 .fullTime {
     float: right;
     /* margin-left: 15.6vw; */
@@ -1220,7 +1241,7 @@ pre {
     color: #00adff !important;
     letter-spacing: -0.9vw !important;
 }
-
+/*
 @media only screen and (max-width: 1570px) {
     #containerA {
         width: 80%;
@@ -1236,27 +1257,10 @@ pre {
         height: auto;
         margin-top:0%;
     }
-    .shinLinks {
-        position: static !important;
-        margin: auto;
-   
-        height: auto!important;
-        width: 100vw !important;
-        background-color: rgba(0, 0, 0, 0.6);
-    margin-top:-2%;
-        padding: 5%;
-    }
+  
 
 
-
-        .shinLinks a {
-            font-size:12px!important;
-            float:left;
-            display:inline-block;
-        }
-    debug a:first-of-type, debug a, shinLinks a {
-        margin-top: auto;
-    }
+ 
     #containerA {
         position: static !important;
         max-width: none;
@@ -1291,13 +1295,6 @@ pre {
         width: 100%;
     }
 
-    .shinLinks a {
-        padding: 1% 1%;
-    }
-
-        .shinLinks a:first-of-type {
-            padding: .5%;
-        }
 
     #containerA {
         margin-top: 13%;
@@ -1361,5 +1358,22 @@ pre {
 @media only screen and (max-width: 500px) {
     #containerA {
         margin-top: 125px;
+    }
+}
+*/
+
+
+
+@media only screen and (max-width: 1200px) {
+    #introText p {
+        font-size: 18px !important;
+        word-spacing: normal;
+        letter-spacing: normal;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pitch {
+        flex-direction: column;
     }
 }

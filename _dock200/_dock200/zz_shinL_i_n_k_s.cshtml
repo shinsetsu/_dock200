@@ -1,6 +1,39 @@
 ﻿@using _dock200.Models;
 
-<style type="text/css">
+
+@{ List<shinLink> links = new List<shinLink>();
+    //links.Add("/", "Home", "Home", "_self", "", "");
+
+    //shinLink->HrefS IdS DisplayTextS TargetS DownloadS FilenameS
+
+
+    //links.Add(new shinLink("/PDF", "PDF", "PDFTooling"));
+
+    //links.Add(new shinLink("/webTech", "webTech", "webTechSites"));
+    //links.Add(new shinLink("/shinIps2", "shinIps2", "shinIps2"));
+    //links.Add(new shinLink("/Resume", "Resume", "Resume"));
+    //links.Add(new shinLink("https://devdocs.io/cpp/", "C++_Documentation", "C++_Documentation"));
+    //links.Add(new shinLink("https://en.cppreference.com/w/cpp/links/libs", "C++_Libraries", "C++_Libraries"));
+    //links.Add(new shinLink("https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-3.1", "RazorSyntax", "RazorSyntax"));
+    //links.Add(new shinLink("https://developer.mozilla.org/en-US/docs/Web/API", "MSDN_WebApIs", "MSDN_WebApIs"));
+    //links.Add(new shinLink("https://docs.microsoft.com/en-us/dotnet/api/", "ASP_Documentation", "ASP_Documentation"));
+    //links.Add(new shinLink("https://docs.microsoft.com/en-us/ef/", "Entity_Framework", "Entity_Framework"));
+    //links.Add(new shinLink("https://docs.microsoft.com/en-us/dotnet/csharp/", "C#_Documentation", "C#_Documentation"));
+    //links.Add(new shinLink("https://semantic-ui.com/", "semanticUI", "semanticUI"));
+    //links.Add(new shinLink("https://developers.google.com/docs/api/how-tos/overview", "GoogleDocs_API", "GoogleDocs_API"));
+
+    //links.Add(new shinLink("/Contact", "Contact", "Contact", true));
+    //links.Add(new shinLink("/ref", "ref", "ref"));
+
+
+    //links.Add(new shinLink("/UITooling", "UITooling", "js", true));
+    //links.Add(new shinLink("/UserSettings", "UserSettings", "UserSettings", true));
+    //links.Add(new shinLink("/SysMetrics", "SysMetrics", "SysMetrics", true));
+}
+
+
+
+<style>
 
 
     .shinLinks {
@@ -10,19 +43,29 @@
         z-index: 9001;
         color: #00f548d4;
         width: auto;
+        background-color: rgba(0, 0, 0, 0.27);
+        border: 1px solid rgb(20, 20, 20);
+        padding: .55% .75%;
+        border-radius: 10px;
     }
 
+        .shinLinks div {
+            min-width: 30% !important;
+            flex: none;
+        }
 
         .shinLinks a {
             display: block;
-            font-weight: 400;
+            font-weight: 200;
             border: none;
             text-decoration: none;
             margin-right: .2%;
             margin-bottom: .2vh;
             color: rgba(255, 255, 255, 0.83);
-            font-size: .7vw;
+            font-size: .8vw;
             letter-spacing: 1.7px;
+            line-height: 2.9vh;
+            width: 100%;
         }
 
             .shinLinks a:hover {
@@ -33,7 +76,7 @@
             padding: 2%;
             background: #005d76;
             border-radius: .2vw;
-/*            float: right;*/
+            /*            float: right;*/
             border: .5px solid #282828;
         }
 
@@ -59,128 +102,98 @@
 
     #Home {
         position: fixed;
-        left: 0.4%;
-        top:0;
-        transform: scale(0.7);
-    }
-
-    #Files {
-        transform: scale(0.9);
-        opacity: .86;
-    }
-
-
-    #createLHicon {
-        font-size: 3vw;
-        line-height: 3vw;
-        color: #2adf34a8;
-        background: black;
-        height: auto;
+        left: 5vw;
+        top: 0;
+        margin: auto;
+        text-align: center;
         padding: 0;
-        margin: 0;
+        background-color: #828282;
+        width: 3vw;
+        min-width: 40px;
+        height: 29px;
+        z-index: 10000;
+        border-bottom: 1px solid #dddddd;
     }
 
-    .LHIcon {
-        position: fixed ;
-        top: 3vh;
-        height: 100vh;
-        left: 1.6vw;
-        display: block;
-        width:auto;
-        height:auto;
-    }
-    #LHIconHeader{
-        outline:1px solid red;
-        display:block;
+    @@media only screen and (max-width: 1650px) {
+
+        .shinLinks {
+            position: static;
+            top: 28px;
+            left: 0;
+            padding: .5% 10%;
+            padding-top: 30px;
+            background-color: rgba(0, 0, 0, 0.37);
+            margin: 0;
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+            .shinLinks a {
+                font-size: 16px;
+                line-height: 40px;
+                display: inline-block;
+                width: 40%;
+            }
     }
 
-    #LHIconHeader:hover {
-        border: 1px solid green;
+    @@media only screen and (max-width: 800px) {
+
+        .shinLinks div {
+            width: 100%;
+        }
     }
 </style>
 
-
-@{
-
-
-
-
-      List<shinLink> links = new List<shinLink>();
-      //links.Add("/", "Home", "Home", "_self", "", "");
-
-      //shinLink -> HrefS IdS DisplayTextS TargetS DownloadS FilenameS
-      //links.Add(new shinLink("/PDF", "PDF", "PDFTooling"));
-
-      //links.Add(new shinLink("/webTech", "webTech", "webTechSites"));
-      links.Add(new shinLink("/shinIps2", "shinIps2", "shinIps2"));
-      links.Add(new shinLink("/Resume", "Resume", "Resume"));
-      links.Add(new shinLink("https://devdocs.io/cpp/", "C++_Documentation", "C++_Documentation"));
-      links.Add(new shinLink("https://en.cppreference.com/w/cpp/links/libs", "C++_Libraries", "C++_Libraries"));
-      links.Add(new shinLink("https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-3.1", "RazorSyntax", "RazorSyntax"));
-      links.Add(new shinLink("https://developer.mozilla.org/en-US/docs/Web/API", "MSDN_WebApIs", "MSDN_WebApIs"));
-      links.Add(new shinLink("https://docs.microsoft.com/en-us/dotnet/api/", "ASP_Documentation", "ASP_Documentation"));
-      links.Add(new shinLink("https://docs.microsoft.com/en-us/ef/", "Entity_Framework", "Entity_Framework"));
-      links.Add(new shinLink("https://docs.microsoft.com/en-us/dotnet/csharp/", "C#_Documentation", "C#_Documentation"));
-      links.Add(new shinLink("https://semantic-ui.com/", "semanticUI", "semanticUI"));
-      links.Add(new shinLink("https://developers.google.com/docs/api/how-tos/overview", "GoogleDocs_API", "GoogleDocs_API"));
-      
-      links.Add(new shinLink("/Contact", "Contact", "Contact", true));
-      links.Add(new shinLink("/ref", "ref", "ref"));
-
-
-      links.Add(new shinLink("/UITooling", "UITooling", "js", true));
-      links.Add(new shinLink("/UserSettings", "UserSettings", "UserSettings", true));
-      links.Add(new shinLink("/SysMetrics", "SysMetrics", "SysMetrics", true));
-
-      
-
-
-
-
-
-}
-
-
+<a href="/" id="Home">   <img src="~/home-24px.svg" />     </a>
+<br />
 <nav class="shinLinks">
-    <a href="/" id="Home">   <img src="~/home-24px.svg" />     </a><br />
 
 
 
+    <div><a href=/shinIps2 id=shinIps2>        <i>/</i>shinIps2 </a>        </div>
 
-                                               
+    <div><a href=/Resume id=Resume>                                                                                   <i>/</i>Resume </a>                         </div>
+    <div><a href="https://devdocs.io/cpp/" ;_Documentation target="_blank">                                           <i>/</i>C&#x2B;&#x2B;_Documentation </a>      </div>
+    <div><a href="https://en.cppreference.com/w/cpp/links/libs" target="_blank">                                      <i>/</i>C&#x2B;&#x2B;_Libraries </a>          </div>
+    <div><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-3.1" target="_blank">  <i>/</i>RazorSyntax </a>                      </div>
+    <div><a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">                                  <i>/</i>MSDN_WebApIs </a>                     </div>
+    <div><a href="https://docs.microsoft.com/en-us/dotnet/api/" target="_blank">                                      <i>/</i>ASP_Documentation </a>                </div>
+    <div><a href="https://docs.microsoft.com/en-us/ef/id=Entity_Framework" target="_blank">                           <i>/</i>Entity_Framework </a>                 </div>
+    <div><a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">                                   <i>/</i>C#_Documentation </a>                 </div>
+    <div><a href="https://semantic-ui.com/" target="_blank">                                                          <i>/</i>semanticUI </a>                       </div>
+    <div><a href="https://developers.google.com/docs/api/how-tos/overview" target="_blank">                           <i>/</i>GoogleDocs_API </a>                   </div>
+    <div><a href=/ref id=ref>                                                                                         <i>/</i>ref </a>                              </div>
+</nav>>
 
 
 
-
-
+@*<nav class="shinLinks">
 
     <br />
 
-    @foreach (var link in links)
-    {
-        if (link.debugBool == false)
-        {
+    @foreach (var link in links) {
+        if (link.debugBool == false) {
             <a href=@link.aHref id=@link.aId>        <i>/</i>@link.aDisplayText </a>
         }
-    }
-    @*<a href="/" id="Home">   <img src="~/port19/Images/SVG/home-24px.svg" />            </a>*@
+    }*@
+@*<a href="/" id="Home">   <img src="~/port19/Images/SVG/home-24px.svg" />            </a>*@
 
-    @* @*<a href="/WebTechURLs" id="WebTechURLs"> <i>/</i>WebTechURLs</a>*@
-    @* <a href="/StockItem" id="StockItem"> <i>/</i>StockItem                </a>*@
-    @*   <a href="/Articles" id="Articles"> <i>/</i>Articles                </a>*@
+@* @*<a href="/WebTechURLs" id="WebTechURLs"> <i>/</i>WebTechURLs</a>*@
+@* <a href="/StockItem" id="StockItem"> <i>/</i>StockItem                </a>*@
+@*   <a href="/Articles" id="Articles"> <i>/</i>Articles                </a>*@
 
 
-    @if (ViewBag.IsDebug)
-    {<debug class="debug">
-            @foreach (var link in links)
-            {
-                if (link.debugBool == true)
-                {<a href=@link.aHref id=@link.aId><i>/</i>@link.aDisplayText </a>}
-        }
-        </debug>}
+@*@if (ViewBag.IsDebug) {<debug class="debug">
+                @foreach (var link in links) {
+                    if (link.debugBool == true) {<a href=@link.aHref id=@link.aId><i>/</i>@link.aDisplayText </a>}
+            }
+            </debug>}
 
 
 
-</nav>
+    </nav>*@
 
 

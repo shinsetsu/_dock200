@@ -41,8 +41,7 @@
 
 
 
-    @if (ViewBag.ApplyDark != null && ViewBag.ApplyDark == true)
-    {
+    @if (ViewBag.ApplyDark != null && ViewBag.ApplyDark == true) {
         <script>
 
 
@@ -105,36 +104,31 @@
     <consoleLog>@*ConsoleLog*@</consoleLog>
 
 
-    @await Html.PartialAsync("zz_shinL_i_n_k_s.cshtml")
+    @Html.Partial("zz_shinL_i_n_k_s.cshtml")
+
 
     <div style="clear:both"></div>
 
     <siteMetrics>
         <ul>
 
-            @if (ViewBag.IsDebug != null || ViewBag.IsDebug != "")
-            {
+            @if (ViewBag.IsDebug != null || ViewBag.IsDebug != "") {
                 <li> IsDebug: @ViewBag.IsDebug</li>
             }
-            @if (ViewBag.pageViewsDebug != null || ViewBag.pageViewsDebug != "")
-            {
+            @if (ViewBag.pageViewsDebug != null || ViewBag.pageViewsDebug != "") {
                 <li> EventsFiredDebug: @ViewBag.pageViewsDebug</li>
             }
-            @if (ViewBag.EventsFiredRelease != null || ViewBag.EventsFiredRelease != "")
-            {
+            @if (ViewBag.EventsFiredRelease != null || ViewBag.EventsFiredRelease != "") {
                 <li>EventsFiredRelease: @ViewBag.pageViewsRelease</li>
             }
 
-            @if (ViewBag.Mac != null || ViewBag.Mac != "")
-            {
+            @if (ViewBag.Mac != null || ViewBag.Mac != "") {
                 <li> Mac: @ViewBag.Mac</li>
             }
-            @if (ViewBag.IpCount != null || ViewBag.IpCount != "")
-            {
+            @if (ViewBag.IpCount != null || ViewBag.IpCount != "") {
                 <li> Num Ip's Seen: @ViewBag.IpCount</li>
             }
-            @if (ViewBag.ClientIP != null || ViewBag.ClientIP != "")
-            {
+            @if (ViewBag.ClientIP != null || ViewBag.ClientIP != "") {
                 <li>   ClientIP: @ViewBag.ClientIP</li>
             }
 

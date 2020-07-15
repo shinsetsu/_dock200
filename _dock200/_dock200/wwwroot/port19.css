@@ -11,6 +11,8 @@ body::-webkit-scrollbar {
 
 body {
     -ms-overflow-style: none;
+    border: 2px solid black;
+    padding: .05%;
 }
 
 main {
@@ -1365,6 +1367,8 @@ pre {
 
 
 @media only screen and (max-width: 1200px) {
+
+
     #introText p {
         font-size: 18px !important;
         word-spacing: normal;
@@ -1375,5 +1379,43 @@ pre {
 
     .pitch {
         flex-direction: column;
+        margin: auto;
+    }
+
+        .pitch div {
+            padding: 0 !important;
+            margin: 0 !important;
+            padding-bottom: 5vh !important;
+            width: 100% !important;
+        }
+
+            .pitch div:nth-child(2) {
+                width: 100%;
+                margin: auto;
+                margin: auto;
+            }
+
+                .pitch div:nth-child(2) img {
+                    width: 50%;
+                    height: auto;
+                    margin: auto;
+                    display: flex;
+                    justify-content: center;
+                }
+
+    #introText p:first-of-type {
+        padding-left: 0 !important;
+    }
+
+    .aspUmbrella {
+        padding: .5% 1% !important;
+        margin: 0 !important;
+    }
+
+    .bodyText {
+        width:90%;
+        margin-left:5%!important;
+        outline:1px solid blue;
+        padding: .5% 2% !important;
     }
 }

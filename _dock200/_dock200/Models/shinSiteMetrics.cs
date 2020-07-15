@@ -15,8 +15,7 @@ using System.Threading.Tasks;
 
 namespace _dock200.Models
 {
-
-	public class shinLink
+		public class shinLink
 	{
 		public shinLink() { }
 		public shinLink(string aHref, string aId, string aDisplayText, bool debug)

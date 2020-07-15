@@ -1,6 +1,6 @@
 ﻿@using _dock200.Models
 @using System.Reflection
-@{var Ip = new shinIps2(); }
+
 
 @model IEnumerable<_dock200.Models._shinIps2VM>
 
@@ -59,10 +59,7 @@
     <thead>
         <tr>
             
-            @foreach (var Property in typeof(shinIps2).GetProperties()) {
-
-            <th>            @Property.Name            </th>
-            }
+            @*@foreach (var Property in typeof(shinIps2).GetProperties()) {            <th>            @Property.Name            </th>            }*@
             @*<th>                @Html.DisplayNameFor(model => model.IP)              </th>
             <th>                @Html.DisplayNameFor(model => model.SeenDate)        </th>
             <th>                @Html.DisplayNameFor(model => model.TimesSeenCount)  </th>

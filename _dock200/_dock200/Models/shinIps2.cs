@@ -42,7 +42,9 @@ namespace _dock200.Models {
 
 		private List<shinIps2> GetIps() {
 			//.OrderBy(b => b.Url).Where(b => b.Rating > 3).ToList();
-			try { using (var db = _dbc) { return db.shinIps2.ToList(); } } catch (Exception e) {
+			try { using (var db = _dbc) {
+					return db.shinIps2.ToList(); } }
+			catch (Exception e) {
 				var a = e; throw;
 			}
 		}
@@ -61,7 +63,7 @@ namespace _dock200.Models {
 	{
 
 
-		[Key] [DisplayName("Id}")] public Guid id { get; set; }
+		[Key] [DisplayName("Id}")] public int id { get; set; }
 		public string IP { get; set; }
 		public string Type { get; set; }
 		public DateTime SeenDate { get; set; }
@@ -77,17 +79,14 @@ namespace _dock200.Models {
 		public string Longitude { get; set; }
 		public string Notes { get; set; }
 
-
-
-
 		public _DBC _DBC;
 
 
 
 
 		public int GetIpRowCount() { return _DBC.shinIps2.Select(x => x.IP).Count(); }
-		public shinIps2 GetIp(Guid id) { return _DBC.shinIps2.FirstOrDefault(x => x.id == id); }
-		public async Task<shinIps2> GetIpsAsync(Guid id) { if (id == Guid.Empty) { throw new ArgumentNullException(nameof(id)); } return await _DBC.shinIps2.FirstOrDefaultAsync(x => x.id == id); }
+		public shinIps2 GetIp(int id) { return _DBC.shinIps2.FirstOrDefault(x => x.id == id); }
+		//public  List<shinIps2> GetIps() {  return  _DBC.shinIps2.Select(); }
 		public int GetIpCount() {
 			int rowCount;
 			var connectionString = ConfigurationManager.ConnectionStrings["_d200"].ConnectionString;

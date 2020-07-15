@@ -61,7 +61,6 @@ namespace _dock200.Models
 
 
 
-
 	public class shinSiteMetrics
 	{
 

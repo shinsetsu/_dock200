@@ -1232,6 +1232,8 @@ pre {
     width: auto;
     height: 60vh;
     opacity: 0.8;
+    margin-left: 6.6vw;
+    margin-top: -2.3vh;
     border-bottom-left-radius: 11px;
     border-bottom-right-radius: 39px;
 }

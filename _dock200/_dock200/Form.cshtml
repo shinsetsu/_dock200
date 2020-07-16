@@ -1,0 +1,444 @@
+﻿@{ Layout = "z____SM________Index.cshtml"; }
+
+<style>
+    .tableForm {
+        background-color: rgb(212 212 212 / 94%);
+        padding: 2% 4%;
+        margin-top: 5%;
+        width: 94%;
+        margin: auto;
+    }
+
+    .formBullet {
+        color: rgb(25 71 180);
+    }
+
+    o {
+        text-decoration: underline;
+    }
+</style>
+
+<table class="tableForm" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="20">&nbsp;</td>
+            <td valign="top">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td valign="top"> </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                <table class="text" cellspacing="0" cellpadding="0" width="100%" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center" class="text">
+                                                <table width="100%" border="0" cellpadding="0" cellspacing="4" class="text">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="170">
+                                                                <span class="formBullet">* </span>First
+                                                                Name
+                                                            </td>
+                                                            <td><input class="text" size="26" name="fname" id="fname"></td>
+                                                            <td width="5"></td>
+                                                            <td width="150">
+                                                                <span class="formBullet">* </span>Last
+                                                                Name
+                                                            </td>
+                                                            <td><input class="text" size="26" name="lname" id="lname"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="formBullet">* </span>E-Mail 1 </td>
+                                                            <td><input class="text" size="26" name="email1" id="email1"></td>
+                                                            <td></td>
+                                                            <td><span class="formBullet">* </span>E-Mail 2</td>
+                                                            <td><input class="text" size="26" name="email2" id="email2"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="formBullet">* </span>Date of Birth </td>
+                                                            <td valign="center" align="left"><input class="text" size="12" name="dob" id="dob">(dd-mm-yyyy)</td>
+                                                            <td></td>
+                                                            <td>Sex</td>
+                                                            <td valign="center" align="left">
+                                                                <input name="gender" type="radio" id="gender" value="male" checked="">
+                                                                Male
+                                                                <input type="radio" value="female" name="gender" id="gender">
+                                                                Female
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="formBullet">* </span>Nationality</td>
+                                                            <td>
+                                                                <select class="text" name="nationality" id="nationality">
+                                                                    <option value="---Choose---" selected="">----Choose----</option>
+                                                                    <option value="Indian">Indian</option>
+                                                                    <option value="American">American</option>
+                                                                    <option value="Australian">Australian</option>
+                                                                    <option value="African">African</option>
+                                                                    <option value="Asian">Asian</option>
+                                                                    <option value="Russian">Russian</option>
+                                                                </select>
+                                                            </td>
+                                                            <td></td>
+                                                            <td>&nbsp;&nbsp; Marital Status </td>
+                                                            <td>
+                                                                <input name="mstatus" type="radio" class="text" id="mstatus" value="married" checked="">
+                                                                Married
+                                                                <input class="text" type="radio" value="unmarried" name="mstatus" id="mstatus">
+                                                                UnMarried
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="style7">* </span>Phone No . </td>
+                                                            <td><input class="text" size="26" name="phone" id="phone"></td>
+                                                            <td>&nbsp;</td>
+                                                            <td><span class="style7">*</span> Mobile No. </td>
+                                                            <td><input class="text" size="26" name="mobile" id="mobile"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" colspan="5" height="25">
+                                                                <span class="ResumeSubhead">                                                                                                                               </span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="formBullet">* </span>Address 1</td>
+                                                            <td>
+                                                                <textarea class="text" name="add1" id="add1" rows="4" cols="26"></textarea>
+                                                            </td>
+                                                            <td>&nbsp;</td>
+                                                            <td>Address 2 </td>
+                                                            <td><textarea class="text" name="add2" id="add2" rows="4" cols="26"></textarea></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="ResumeSubhead" valign="center" bgcolor="#f0f1f1" colspan="5" height="22">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5">
+                                                                <table class="text" cellspacing="4" cellpadding="0" width="100%" border="0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td align="middle" width="80">&nbsp;</td>
+                                                                            <td align="middle"><strong>Year</strong></td>
+                                                                            <td align="middle" width="100"><strong>Name</strong></td>
+                                                                            <td align="middle"><strong>Subject</strong></td>
+                                                                            <td align="middle"><strong>University</strong></td>
+                                                                            <td align="middle" width="40"><strong>Percentage</strong></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left">Graduation</td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="ugyear" id="ugyear">
+                                                                                    <option selected="">2001</option>
+                                                                                    <option>2002</option>
+                                                                                    <option>2003</option>
+                                                                                    <option>2005</option>
+                                                                                    <option>2006</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="ugname" id="ugname">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="BTECH">B.Tech.</option>
+                                                                                    <option value="BCA">B.C.A</option>
+                                                                                    <option value="BSC">B.Sc.</option>
+                                                                                    <option value="BCOM">B.Com.</option>
+                                                                                    <option value="BBA">BBA</option>
+                                                                                    <option value="BPHARMACY">B.Ph.</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="ugsub" id="ugsub">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="1">Electronics</option>
+                                                                                    <option value="2">Electrical</option>
+                                                                                    <option value="3">Computers</option>
+                                                                                    <option value="4">IT</option>
+                                                                                    <option value="5">Mechanical</option>
+                                                                                    <option value="6">Civil</option>
+                                                                                    <option value="7">Accounts</option>
+                                                                                    <option value="8">Commerce</option>
+                                                                                    <option value="9">Arts</option>
+                                                                                    <option value="10">Science</option>
+                                                                                    <option value="11">BioTech</option>
+                                                                                    <option value="12">Microbiology</option>
+                                                                                    <option value="13">ManagementScience</option>
+                                                                                    <option value="14">Others</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="uguni" id="uguni">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="Indian">Indian</option>
+                                                                                    <option value="African">US</option>
+
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" size="1" name="ugper" id="ugper">
+                                                                                    <option selected="">100</option>
+                                                                                    <option>90</option>
+                                                                                    <option>80</option>
+                                                                                    <option>70</option>
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left">PG</td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="pgyear">
+                                                                                    <option selected="">2001</option>
+                                                                                    <option>2002</option>
+                                                                                    <option>2003</option>
+                                                                                    <option>2005</option>
+                                                                                    <option>2006</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="pgname" id="pgname">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="8">MSc</option>
+                                                                                    <option value="9">MBA</option>
+                                                                                    <option value="10">M.Tech</option>
+                                                                                    <option value="11">MCA</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="pgsub" id="pgsub">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="1">Electronics</option>
+                                                                                    <option value="2">Electrical</option>
+                                                                                    <option value="3">Computers</option>
+                                                                                    <option value="4">IT</option>
+                                                                                    <option value="5">Mechanical</option>
+                                                                                    <option value="6">Civil</option>
+                                                                                    <option value="7">Accounts</option>
+                                                                                    <option value="8">Commerce</option>
+                                                                                    <option value="9">Arts</option>
+                                                                                    <option value="10">Science</option>
+                                                                                    <option value="11">BioTech</option>
+                                                                                    <option value="12">Microbiology</option>
+                                                                                    <option value="13">ManagementScience</option>
+                                                                                    <option value="14">Others</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="pguni" id="pguni">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="Indian">Indian</option>
+                                                                                    <option value="African">USA</option>
+
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="pgper" id="pgper">
+                                                                                    <option selected="">100</option>
+                                                                                    <option>90</option>
+                                                                                    <option>80</option>
+                                                                                    <option>70</option>
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td align="left">Diploma</td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="dpyear" id="dpyear">
+                                                                                    <option selected="">2001</option>
+                                                                                    <option>2002</option>
+                                                                                    <option>2003</option>
+                                                                                    <option>2005</option>
+                                                                                    <option>2006</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="dpname" id="dpname">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="DME">D.M.E</option>
+                                                                                    <option value="DCE">D.C.E</option>
+                                                                                    <option value="DEEE">D.E.E.E</option>
+                                                                                    <option value="DECE">D.E.C.E</option>
+
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="dpsub" id="dpsub">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="1">Electronics</option>
+                                                                                    <option value="2">Electrical</option>
+                                                                                    <option value="3">Computers</option>
+                                                                                    <option value="4">IT</option>
+                                                                                    <option value="5">Mechanical</option>
+                                                                                    <option value="6">Civil</option>
+                                                                                    <option value="7">Accounts</option>
+                                                                                    <option value="8">Commerce</option>
+                                                                                    <option value="9">Arts</option>
+                                                                                    <option value="10">Science</option>
+                                                                                    <option value="11">BioTech</option>
+                                                                                    <option value="12">Microbiology</option>
+                                                                                    <option value="13">ManagementScience</option>
+                                                                                    <option value="14">Others</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="dpuni" id="dpuni">
+                                                                                    <option value="---Choose---" selected="">--Choose--</option>
+                                                                                    <option value="Indian">Indian</option>
+                                                                                    <option value="African">USA</option>
+
+                                                                                </select>
+                                                                            </td>
+                                                                            <td align="left">
+                                                                                <select class="text" name="dpper" id="dpper">
+                                                                                    <option selected="">100</option>
+                                                                                    <option>90</option>
+                                                                                    <option>80</option>
+                                                                                    <option>70</option>
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Others</td>
+                                                            <td colspan="4"><input class="text" size="50" name="others" id="others"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="formBullet">*</span>Technical</td>
+                                                            <td valign="center" colspan="4">
+                                                                <input class="text" size="50" name="tech" id="tech">
+                                                                eg.(vb,.net,asp,
+                                                                java,c#, etc..)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td bgcolor="#f0f1f1" colspan="5" height="22"><span class="ResumeSubhead">Experience Summary </span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Experience</td>
+                                                            <td colspan="4">
+                                                                <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td width="60">
+                                                                                <select class="text" name="expyear" id="expyear">
+                                                                                    <option selected="">0</option>
+                                                                                    <option>1</option>
+                                                                                    <option>2</option>
+                                                                                    <option>3</option>
+                                                                                    <option>4</option>
+                                                                                    <option>5</option>
+                                                                                    <option>6</option>
+                                                                                    <option>7</option>
+                                                                                    <option>8</option>
+                                                                                    <option>9</option>
+                                                                                    <option>10</option>
+                                                                                    <option>11</option>
+                                                                                    <option>12</option>
+                                                                                </select>
+                                                                            </td>
+                                                                            <td width="50">&nbsp;Years</td>
+                                                                            <td width="10"></td>
+                                                                            <td width="60">
+                                                                                <select class="text" name="expmonths" id="expmonths">
+                                                                                    <option>0</option>
+                                                                                    <option>1</option>
+                                                                                    <option>2</option>
+                                                                                    <option>3</option>
+                                                                                    <option>4</option>
+                                                                                    <option>5</option>
+                                                                                    <option>6</option>
+                                                                                    <option>7</option>
+                                                                                    <option>8</option>
+                                                                                    <option>9</option>
+                                                                                    <option>10</option>
+                                                                                    <option>11</option>
+
+                                                                                </select>
+                                                                            </td>
+                                                                            <td>&nbsp;Months</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Recent Projects </td>
+                                                            <td colspan="4">
+                                                                <input class="text" size="50" name="projtitle" id="projtitle">
+                                                                (Note : Enter Project Title
+                                                                Only)
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Job Applied </td>
+                                                            <td colspan="4">
+                                                                <select class="text" name="job" id="job">
+                                                                    <option selected="">Data Warehousing</option>
+                                                                    <option>.Net</option>
+                                                                    <option>Java</option>
+                                                                    <option>Oracle</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Reference</td>
+                                                            <td colspan="4"><input class="text" size="26" name="ref" id="ref"></td>
+                                                        </tr>
+                                                        <tr style="display:none">
+                                                            <td>Resume Status </td>
+                                                            <td colspan="4">
+                                                                <select class="text" name="resumestatus" id="resumestatus">
+                                                                    <option selected="">---Choose---</option>
+                                                                    <option>.Net</option>
+                                                                    <option>Java</option>
+                                                                    <option>Oracle</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span class="formBullet">*</span>Attach Resume </td>
+                                                            <td valign="center" colspan="4">
+                                                                <input type="file" name="file" class="text" id="file" size="50">
+
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top"><label id="lblErrmsg" name="lblErrmsg" style="color:Maroon"></label> </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" bgcolor="#f0f1f1" height="40">
+                                                <input type="submit" value="Refresh" name="Submit2" id="submit2">
+                                                &nbsp;&nbsp;&nbsp;
+                                                <input type="submit" value="Submit" name="Submit22" id="submit22">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>                              <p>&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td width="20">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>

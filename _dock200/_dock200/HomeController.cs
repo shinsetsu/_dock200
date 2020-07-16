@@ -78,6 +78,7 @@ namespace _dock200.Controllers {
 		}
 
 		[Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
+		[Route("Form")] public IActionResult Form() { return View("Form.cshtml"); }
 
 		[Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
 		[Route("Ref")]

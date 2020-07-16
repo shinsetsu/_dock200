@@ -37,7 +37,8 @@
 
 
     .shinLinks {
-        top: 10vh;
+        font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
+            top: 10vh;
         right: 2%;
         position: fixed;
         z-index: 9001;
@@ -114,10 +115,22 @@
         z-index: 10000;
         border-bottom: 1px solid #dddddd;
     }
+        #Home:hover {
+            background-color: rgb(114 196 219);
+        }
+
+   
+
+
+
+
+
+
 
     @@media only screen and (max-width: 1650px) {
 
         .shinLinks {
+
             position: static;
             top: 28px;
             left: 0;
@@ -129,11 +142,12 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            border-radius:0;
         }
 
             .shinLinks a {
-                font-size: 16px;
-                line-height: 40px;
+                font-size: 10px;
+                line-height: 19px;
                 display: inline-block;
                 width: 40%;
             }
@@ -154,6 +168,7 @@
 
 
     <div><a href=/shinIps2 id=shinIps2>        <i>/</i>shinIps2 </a>        </div>
+    <div><a href=/Form id=Form>        <i>/</i>Form </a>        </div>
 
     <div><a href=/Resume id=Resume>                                                                                   <i>/</i>Resume </a>                         </div>
     <div><a href="https://devdocs.io/cpp/" ;_Documentation target="_blank">                                           <i>/</i>C&#x2B;&#x2B;_Documentation </a>      </div>

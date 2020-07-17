@@ -47,11 +47,13 @@
         background-color: rgba(0, 0, 0, 0.27);
         border: 1px solid rgb(20, 20, 20);
         padding: .55% .75%;
+        
         border-radius: 10px;
+        z-index:50000;
     }
 
         .shinLinks div {
-            min-width: 30% !important;
+            min-width: 10% !important;
             flex: none;
         }
 
@@ -61,11 +63,11 @@
             border: none;
             text-decoration: none;
             margin-right: .2%;
-            margin-bottom: .2vh;
+            margin-bottom: .5vh;
             color: rgba(255, 255, 255, 0.83);
             font-size: .8vw;
             letter-spacing: 1.7px;
-            line-height: 2.9vh;
+            line-height: 0;
             width: 100%;
         }
 
@@ -130,19 +132,19 @@
     @@media only screen and (max-width: 1650px) {
 
         .shinLinks {
-
-            position: static;
-            top: 28px;
+            top: 29.3px;
             left: 0;
             padding: .5% 10%;
             padding-top: 30px;
-            background-color: rgba(0, 0, 0, 0.37);
+            background-color: rgb(0 0 0 / 37%);
             margin: 0;
+            margin-top: -.5px;
+            padding-top: .05vh;
             width: 100vw;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            border-radius:0;
+            border-radius: 0;
         }
 
             .shinLinks a {

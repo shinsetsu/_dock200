@@ -65,7 +65,7 @@ namespace _dock200.Models {
 		public DateTime seenDate { get; set; }
 		public int timesSeenDay { get; set; }
 		public Int64 timesSeenCount { get; set; }
-		public Int64 totalIpsSeen { get; set; }
+		//public Int64 totalIpsSeen { get; set; }
 		public string countCode { get; set; }
 		public string countName { get; set; }
 		public string stateABR { get; set; }

@@ -1230,13 +1230,14 @@ pre {
 
 .zjohnson {
     border-bottom: 2.4vh solid rgb(0 0 0);
-    position: absolute;
-    width: auto;
-    height: 51.3vh;
+    position: static;
+    width: 20%;
+    height: auto;
     opacity: 0.8;
-    margin-left: -0.5vw;
-    margin-top: 22.1vh;
-    border-bottom-left-radius: 11px;
+    margin-top:2%;
+
+
+
 }
 
 .fullTime {

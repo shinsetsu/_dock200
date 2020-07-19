@@ -78,6 +78,7 @@ namespace _dock200.Controllers {
 		}
 
 		[Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
+		[Route("RefList")] public IActionResult RefList() { return View("RefList.cshtml"); }
 		[Route("Form")] public IActionResult Form() { return View("Form.cshtml"); }
 
 		[Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
@@ -94,12 +95,10 @@ namespace _dock200.Controllers {
 		}
 		[Route("shinIps2")]
 		public async Task<IActionResult> shinIps2() {
-			var IpVM = new _shinIps2VM() { };
-					
 
-
-			int i = 0;
-			return View("Ips.cshtml", IpVM);
+			var Ips = await _DBC.shinIps2.ToListAsync();
+		
+			return View("Ips.cshtml", Ips);
 
 
 

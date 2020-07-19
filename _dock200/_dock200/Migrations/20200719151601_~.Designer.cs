@@ -10,8 +10,8 @@ using _dock200.Data;
 namespace _dock200.Migrations
 {
     [DbContext(typeof(_DBC))]
-    [Migration("20200715143943_~2")]
-    partial class _2
+    [Migration("20200719151601_~")]
+    partial class _
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -134,48 +134,51 @@ namespace _dock200.Migrations
 
             modelBuilder.Entity("_dock200.Models.shinIps2", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<long>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CountCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CountName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("IP")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Latitude")
+                    b.Property<string>("city")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Longitude")
+                    b.Property<string>("countCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Notes")
+                    b.Property<string>("countName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("SeenDate")
+                    b.Property<string>("latitude")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("longitude")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("seenDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("State")
+                    b.Property<string>("state")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StateABR")
+                    b.Property<string>("stateABR")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TimesSeenDated")
+                    b.Property<long>("timesSeenCount")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("timesSeenDay")
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
+                    b.Property<long>("totalIpsSeen")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("type")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Zip")
+                    b.Property<string>("zip")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");

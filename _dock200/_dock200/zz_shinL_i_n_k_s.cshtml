@@ -38,18 +38,29 @@
 
     .shinLinks {
         font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
-            top: 10vh;
+        top: 10vh;
         right: 2%;
         position: fixed;
         z-index: 9001;
         color: #00f548d4;
         width: auto;
         background-color: rgba(0, 0, 0, 0.27);
-        border: 1px solid rgb(20, 20, 20);
+        border: .5px solid rgb(20, 20, 20);
         padding: .55% .75%;
-        
         border-radius: 10px;
-        z-index:50000;
+        z-index: 50000;
+        position: static;
+        left: 0;
+        padding: .5% 10%;
+        
+        background-color: rgb(0 0 0 / 37%);
+        margin: 0;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        border-radius: 0;
+        margin-top: 10px;
     }
 
         .shinLinks div {
@@ -65,9 +76,9 @@
             margin-right: .2%;
             margin-bottom: .5vh;
             color: rgba(255, 255, 255, 0.83);
-            font-size: .8vw;
+            font-size: 9px;
             letter-spacing: 1.7px;
-            line-height: 0;
+            
             width: 100%;
         }
 
@@ -121,9 +132,6 @@
             background-color: rgb(114 196 219);
         }
 
-   
-
-
 
 
 
@@ -131,28 +139,7 @@
 
     @@media only screen and (max-width: 1650px) {
 
-        .shinLinks {
-            top: 29.3px;
-            left: 0;
-            padding: .5% 10%;
-            padding-top: 30px;
-            background-color: rgb(0 0 0 / 37%);
-            margin: 0;
-            margin-top: -.5px;
-            padding-top: .05vh;
-            width: 100vw;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            border-radius: 0;
-        }
-
-            .shinLinks a {
-                font-size: 10px;
-                line-height: 19px;
-                display: inline-block;
-                width: 40%;
-            }
+    
     }
 
     @@media only screen and (max-width: 800px) {
@@ -173,7 +160,9 @@
     <div><a href=/Form id=Form>        <i>/</i>Form </a>        </div>
 
     <div><a href=/Resume id=Resume>                                                                                   <i>/</i>Resume </a>                         </div>
-    <div><a href=/https://en.wikipedia.org/wiki/Microtypography id=microtYpo>                                                                                   <i>/</i>Resume </a>                         </div>
+    <div><a href="https://en.wikipedia.org/wiki/Apache_Kafka#Connect_API id=Kafka" target="_blank">                                                                                   <i>/</i>Kafka </a>                         </div>
+    <div><a href="https://en.wikipedia.org/wiki/Apache_Solr" id=Solr" target="_blank">                                                                                   <i>/</i>Solr </a>                         </div>
+    <div><a href="https://en.wikipedia.org/wiki/Microtypography id=microtYpo">                                                                                   <i>/</i>Resume </a>                         </div>
     <div><a href="http://www.tug.org/levels.html" id=Resume>                                                                                   <i>/</i>Tug.io </a>                         </div>
     <div><a href="https://devdocs.io/cpp/" ;_Documentation target="_blank">                                           <i>/</i>C&#x2B;&#x2B;_Documentation </a>      </div>
     <div><a href="https://en.cppreference.com/w/cpp/links/libs" target="_blank">                                      <i>/</i>C&#x2B;&#x2B;_Libraries </a>          </div>

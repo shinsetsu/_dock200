@@ -5,7 +5,7 @@
 		#start-process "chrome.exe" "https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#",'--profile-directory="Default"'
 
   #Open SSMS   SQL Serrver Manager
-		#start "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Ssms.exe"
+#		start "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Ssms.exe"
 		#		 $serverName -E          possible flag for opening and feeding config....
 
 

@@ -13,6 +13,7 @@ body {
     -ms-overflow-style: none;
     border: 2px solid black;
     padding: .05%;
+    border-top: 15px solid #313131!important;
 }
 
 main {
@@ -20,6 +21,7 @@ main {
     margin-top: 0px;
     min-height: 100vh;
     height: auto;
+
 }
 
 bg img {
@@ -51,7 +53,7 @@ body {
     overflow: scroll;
     overflow-X: hidden;
     letter-spacing: -0.51px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 200;
     font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
     /*background: url(/port19/honeycomb33.png) repeat, radial-gradient(#00564bb8 41%, #04112f 100%);*/
@@ -129,40 +131,6 @@ page {
     margin: 1vh 1vw;
     border-radius: .1vw;
 }
-
-.swanSong {
-    transform: scaleX(-1);
-    height: auto;
-    width: 95.3%;
-    max-width: 30vw;
-    margin-top: 1%;
-    float: left;
-    padding: 0;
-    border-bottom-left-radius: .4vw;
-    border-bottom-right-radius: 3vw;
-}
-
-.dibs {
-    width: 891px;
-    height: 708px;
-    border-radius: .1vw;
-    /* margin: 0 2vw; */
-    margin-left: -7.6vw;
-    margin-right: 1vw;
-    margin-top: 2vh;
-    border-radius: 0.3vw;
-    border-bottom-left-radius: 4.2vw;
-    opacity: .9;
-    background-color: red;
-    background-image: url("port19/dibs.jpg");
-}
-
-    .dibs:nth-child(1n):hover {
-        background: url("images/card-back.jpg") no-repeat;
-    }
-
-
-
 
 * {
     box-sizing: border-box;
@@ -251,20 +219,6 @@ header {
     text-shadow: -1px 0px 1px #000, 1px 0px 1px #000, 0px 1px 1px #000, 0px -1px 1px #000;
 }
 
-.links a {
-    color: #00cbff;
-    font-size: 24px;
-    text-shadow: -1px 0px 1px #000, 1px 0px 1px #000, 0px 1px 1px #000, 0px -1px 1px #000;
-}
-
-.fa-moon {
-    color: #00285e;
-}
-
-.fa-sun {
-    color: #ffc100;
-    text-shadow: -1px 0px 1px rgba(0, 0, 0, 0.5), 1px 0px 1px rgba(0, 0, 0, 0.5), 0px 1px 1px rgba(0, 0, 0, 0.3), 0px -1px 1px rgba(0, 0, 0, 0.5);
-}
 
     .fa-sun:hover,
     fa-moon:hover {
@@ -434,7 +388,7 @@ consoleLog {
     position: fixed;
     top: 5%;
     left: 7%;
-    font-size: 2vh;
+    font-size: 12px;
 }
 /*
 #containerA li {
@@ -495,7 +449,7 @@ consoleLog {
 }
 
     .personalInterest h1 {
-        font-size: 0.9vw !important;
+        font-size: 12px !important;
     }
 
 .reccentFocus {
@@ -514,14 +468,14 @@ consoleLog {
     }
 
     .reccentFocus h2 {
-        font-size: 1.2vw !important;
+        font-size: 14px !important;
         font-weight: 200;
         letter-spacing: 0.22vw;
         color: #00aebe;
     }
 
     .reccentFocus h3 {
-        font-size: 1.03vw !important;
+        font-size: 12px!important;
         font-weight: 200;
         letter-spacing: 0.05vw;
         line-height: 4.6vh;
@@ -575,13 +529,13 @@ consoleLog {
     }
 
     .youBuild p {
-        font-size: 1.1vw !important;
+        font-size: 12px !important;
         color: #00c6ff !important;
         text-align: center;
     }
 
 #introText {
-    font-size: 1.5vw;
+    font-size: 14px;
     height: 100%;
     color: #a4a4a4;
     letter-spacing: 0.04vw;
@@ -593,7 +547,7 @@ consoleLog {
         word-spacing: .6vw;
         line-height: 6vh;
         font-weight: 200;
-        font-size: 0.75vw;
+        font-size: 12px;
     }
 
         #introText p b:first-of-type {
@@ -601,7 +555,7 @@ consoleLog {
         }
 
     #introText h1 {
-        font-size: 1.8vw;
+        font-size: 22px;
         color: #00ff14;
         letter-spacing: .01vw;
         font-weight: 400;
@@ -613,7 +567,7 @@ consoleLog {
 
     #introText p,
     #introText span {
-        font-size: 1vw;
+        font-size: 14px;
         color: #a4a4a4;
         letter-spacing: 0.01vw;
         line-height: 4.5vh;
@@ -650,7 +604,7 @@ consoleLog {
     .aspUmbrella li {
         color: #838383;
         font-weight: 100;
-        font-size: 1.6vh;
+        font-size: 14px;
         line-height: 2.7vh;
         padding-bottom: 1.5vh;
     }

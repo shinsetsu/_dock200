@@ -52,7 +52,6 @@
         position: static;
         left: 0;
         padding: .5% 10%;
-        
         background-color: rgb(0 0 0 / 37%);
         margin: 0;
         width: 100vw;
@@ -65,7 +64,9 @@
 
         .shinLinks div {
             min-width: 10% !important;
-            flex: none;
+            width: auto;
+            flex: auto;
+            text-wrap: none !important;
         }
 
         .shinLinks a {
@@ -73,13 +74,14 @@
             font-weight: 200;
             border: none;
             text-decoration: none;
-            margin-right: .2%;
+            margin-right: .4%;
             margin-bottom: .5vh;
             color: rgba(255, 255, 255, 0.83);
             font-size: 9px;
             letter-spacing: 1.7px;
-            
             width: 100%;
+            padding-right:5%;
+            text-wrap:none!important;
         }
 
             .shinLinks a:hover {
@@ -128,6 +130,7 @@
         z-index: 10000;
         border-bottom: 1px solid #dddddd;
     }
+
         #Home:hover {
             background-color: rgb(114 196 219);
         }
@@ -138,8 +141,6 @@
 
 
     @@media only screen and (max-width: 1650px) {
-
-    
     }
 
     @@media only screen and (max-width: 800px) {
@@ -157,13 +158,11 @@
 
 
     <div><a href=/shinIps2 id=shinIps2>        <i>/</i>shinIps2 </a>        </div>
-    <div><a href=/Form id=Form>        <i>/</i>Form </a>        </div>
-
     <div><a href=/Resume id=Resume>                                                                                   <i>/</i>Resume </a>                         </div>
+
     <div><a href="https://en.wikipedia.org/wiki/Apache_Kafka#Connect_API id=Kafka" target="_blank">                                                                                   <i>/</i>Kafka </a>                         </div>
-    <div><a href="https://en.wikipedia.org/wiki/Apache_Solr" id=Solr" target="_blank">                                                                                   <i>/</i>Solr </a>                         </div>
-    <div><a href="https://en.wikipedia.org/wiki/Microtypography id=microtYpo">                                                                                   <i>/</i>Resume </a>                         </div>
-    <div><a href="http://www.tug.org/levels.html" id=Resume>                                                                                   <i>/</i>Tug.io </a>                         </div>
+    <div><a href="https://en.wikipedia.org/wiki/Apache_Solr" id=Solr" target="_blank"><i>/</i>Solr </a>                         </div>
+    <div><a href="http://www.tug.org/levels.html" id=Resume><i>/</i>Tug.io </a>                         </div>
     <div><a href="https://devdocs.io/cpp/" ;_Documentation target="_blank">                                           <i>/</i>C&#x2B;&#x2B;_Documentation </a>      </div>
     <div><a href="https://en.cppreference.com/w/cpp/links/libs" target="_blank">                                      <i>/</i>C&#x2B;&#x2B;_Libraries </a>          </div>
     <div><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-3.1" target="_blank">  <i>/</i>RazorSyntax </a>                      </div>
@@ -171,8 +170,12 @@
     <div><a href="https://docs.microsoft.com/en-us/dotnet/api/" target="_blank">                                      <i>/</i>ASP_Documentation </a>                </div>
     <div><a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore?view=efcore-3.1" target="_blank">                           <i>/</i>Entity_Framework </a>                 </div>
     <div><a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank">                                   <i>/</i>C#_Documentation </a>                 </div>
+    <div><a href="https://andrewlock.net/" target="_blank">                                   <i>/</i>AndewLock .NetEscapades </a>                 </div>
+    <div><a href="https://weblog.west-wind.com/" target="_blank">                                   <i>/</i>RickStrahl .NetWestWind</a>                 </div>
     <div><a href="https://semantic-ui.com/" target="_blank">                                                          <i>/</i>semanticUI </a>                       </div>
+    <div><a href="https://material.io/design" target="_blank">                                                          <i>/</i>Material.io Design </a>                       </div>
     <div><a href="https://developers.google.com/docs/api/how-tos/overview" target="_blank">                           <i>/</i>GoogleDocs_API </a>                   </div>
+    <div><a href=/Form id=Form>        <i>/</i>Form </a>        </div>
     <div><a href=/ref id=ref>                                                                                         <i>/</i>ref </a>                              </div>
 </nav>
 

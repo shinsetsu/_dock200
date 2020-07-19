@@ -1,12 +1,22 @@
 ﻿@model IEnumerable<_dock200.Models.shinIps2>
+@using _dock200.Models
+@using System.Reflection
 
 @{
 
     Layout = "~/z____SM________Index.cshtml";
 }
 
-<h1>hey    Ips</h1>
 
 
 
-<h2>Write the Reflections Code Jackass..</h2>
+<h2>Write the Reflections Code ..</h2>
+
+@*@{ 
+  foreach (var prop in typeof(Model[).GetRuntimeProperties() {
+
+
+      @prop.Name.ToString();
+  }
+
+}*@

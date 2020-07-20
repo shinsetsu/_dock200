@@ -170,6 +170,9 @@ namespace _dock200.Migrations
                     b.Property<int>("timesSeenDay")
                         .HasColumnType("int");
 
+                    b.Property<long>("totalIpsSeen")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("type")
                         .HasColumnType("nvarchar(max)");
 

@@ -52,7 +52,7 @@ namespace _dock200.Controllers {
 
 			if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false; }
 
-			if (false || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
+			if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
 			{
 
 				_shinIps2 = new shinIps2();
@@ -83,22 +83,17 @@ namespace _dock200.Controllers {
 
 		[Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
 		[Route("Ref")]
-		[Route("Refinery")]
-		public async Task<IActionResult> Ref() {
-			var Ref = await _DBC.RefEmpAp_M.ToListAsync();
-			if (Ref == null) { var Ref2 = new RefEmpAp_M() { }; return View("Ref.cshtml", Ref2); }
+		//[Route("Refinery")]
+		//public async Task<IActionResult> Ref() {
+		//	var Ref = await _DBC.RefEmpAp_M.ToListAsync();
+		//	if (Ref == null) { var Ref2 = new RefEmpAp_M() { }; return View("Ref.cshtml", Ref2); }
 
 
 
 
-			return View("Ref.cshtml", Ref);
-		}
-		[Route("shinIps2")]
-		public async Task<IActionResult> shinIps2() {
-
-			var Ips = await _DBC.shinIps2.ToListAsync();
-		
-			return View("Ips.cshtml", Ips);
+		//	return View("Ref.cshtml", Ref);
+		//}
+		[Route("shinIps2")]		public async Task<IActionResult> shinIps2I() {			var Ips = await _DBC.shinIps2.ToListAsync();					return View("Ips.cshtml", Ips);
 
 
 

@@ -20,7 +20,7 @@ namespace _dock200.Data
 
         public DbSet<_dock200.Models.shinIps2> shinIps2 { get; set; }
         public DbSet<_dock200.Models.shinSiteMetrics> shinSiteMetrics { get; set; }
-        public DbSet<_dock200.Models.shinUserSessionSettings> shinUserSessionSettings { get; set; }
+
 
 
 
@@ -33,18 +33,16 @@ namespace _dock200.Data
 
     public static class _DBInitalize
     {
+
         public static void Init(_DBC _dbc)
         {
             _dbc.Database.EnsureCreated();
 
 
-            if (_dbc.shinIps2.Any()) { return; }   // Looking if DB has been seeded
-
-            var VM = new _shinIps2VM() { };
-            VM.Ips.Add(new shinIps2 { IP = "Init" });
+            if (!_dbc.shinIps2.Any()) { _dbc.Add(new shinIps2 { IP = "Init" }); }   // Looking if DB has been seeded
+            if (!_dbc.shinSiteMetrics.Any()) { _dbc.Add(new shinSiteMetrics { pageViewsDebug = 1, pageViewsRelease = 1, pageViewsEx = 1  }); }   // Looking if DB has been seeded
 
 
-            foreach (var _ in VM.Ips) { _dbc.Add(_); }
             _dbc.SaveChanges();
         }
     }

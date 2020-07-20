@@ -92,20 +92,6 @@ namespace _dock200.Migrations
                 {
                     table.PrimaryKey("PK_shinSiteMetrics", x => x.id);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "shinUserSessionSettings",
-                columns: table => new
-                {
-                    io = table.Column<string>(nullable: false),
-                    IP = table.Column<string>(nullable: true),
-                    DarkStyle = table.Column<bool>(nullable: false),
-                    expirationTime = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_shinUserSessionSettings", x => x.io);
-                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -118,9 +104,6 @@ namespace _dock200.Migrations
 
             migrationBuilder.DropTable(
                 name: "shinSiteMetrics");
-
-            migrationBuilder.DropTable(
-                name: "shinUserSessionSettings");
         }
     }
 }

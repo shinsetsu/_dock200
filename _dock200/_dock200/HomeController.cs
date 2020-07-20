@@ -11,100 +11,111 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 
-namespace _dock200.Controllers {
-	public class HomeController : Controller {
-		//private readonly ILogger<HomeController> _logger;
-		private readonly _DBC _DBC;
-		private readonly IWebHostEnvironment _ENV;
-		private shinIps2 _shinIps2;
+namespace _dock200.Controllers
+{
+    public class HomeController : Controller
+    {
+        //private readonly ILogger<HomeController> _logger;
+        private readonly _DBC _dbc;
+        private readonly IWebHostEnvironment _ENV;
+        private shinIps2 _shinIps2;
 
-		public HomeController(_DBC dbc, IWebHostEnvironment env) {
-			_DBC = dbc; _ENV = env;
+        public HomeController(_DBC dbc, IWebHostEnvironment env)
+        {
+            _dbc = dbc; _ENV = env;
 
-		}
+        }
 
-		private void initVariables() {
-			//var shinIP2 = new shinIps2(); shinIP2.init();
-			//var metrics = new shinSiteMetrics(); metrics.init();
-
-
-		}
-
-		/////■■■■  O v e r R i d e s ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-
-		public override void OnActionExecuted(ActionExecutedContext context) {
+        private void initVariables()
+        {
+            //var shinIP2 = new shinIps2(); shinIP2.init();
+            //var metrics = new shinSiteMetrics(); metrics.init();
 
 
-			//initVariables(_DBC);
+        }
 
-			base.OnActionExecuted(context);
+        /////■■■■  O v e r R i d e s ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-			ViewBag.IsDebug = false;
-
-
-			ViewBag.IpCount = "";
-			ViewBag.pageViewsDebug = "";
-			ViewBag.pageViewsRelease = "";
-			ViewBag.ClientIP = "";
-			ViewBag.IsDebug = true;
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
 
 
+            _DBInitalize.Init(_dbc);
 
-			if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false; }
+            base.OnActionExecuted(context);
 
-			if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
-			{
+            ViewBag.IsDebug = false;
 
-				_shinIps2 = new shinIps2();
 
-				ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
-				if (ViewBag.ClientIP != null) {
-					_shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString());
-					//ViewBag.IpCount = _shinIps2.CountIpsSeen();
-				} else { ViewBag.IpCount = 0; }
+            ViewBag.IpCount = "";
+            ViewBag.pageViewsDebug = "";
+            ViewBag.pageViewsRelease = "";
+            ViewBag.ClientIP = "";
+            ViewBag.IsDebug = true;
 
 
 
-				shinSiteMetrics siteMetrics = _DBC.shinSiteMetrics.FirstOrDefault();
-				siteMetrics.PageEventsIncrement(_DBC);
-				ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_DBC);
-				ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_DBC);
-				ViewBag.Mac = siteMetrics.GetMacAddress();
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false; }
+
+            if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
+            {
+
+                _shinIps2 = new shinIps2();
+
+                ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
+                if (ViewBag.ClientIP != null)
+                {
+                    _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString());
+                    //ViewBag.IpCount = _shinIps2.CountIpsSeen();
+                }
+                else { ViewBag.IpCount = 0; }
 
 
 
-
-			}
-		}
-
-		[Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
-		[Route("RefList")] public IActionResult RefList() { return View("RefList.cshtml"); }
-		[Route("Form")] public IActionResult Form() { return View("Form.cshtml"); }
-
-		[Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
-		[Route("Ref")]
-		//[Route("Refinery")]
-		//public async Task<IActionResult> Ref() {
-		//	var Ref = await _DBC.RefEmpAp_M.ToListAsync();
-		//	if (Ref == null) { var Ref2 = new RefEmpAp_M() { }; return View("Ref.cshtml", Ref2); }
+                shinSiteMetrics siteMetrics = _dbc.shinSiteMetrics.FirstOrDefault();
+                //siteMetrics.PageEventsIncrement(_dbc);
+                ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_dbc);
+                ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_dbc);
+                ViewBag.Mac = siteMetrics.GetMacAddress();
 
 
 
 
-		//	return View("Ref.cshtml", Ref);
-		//}
-		[Route("shinIps2")]		public async Task<IActionResult> shinIps2I() {			var Ips = await _DBC.shinIps2.ToListAsync();					return View("Ips.cshtml", Ips);
+            }
+        }
+
+        [Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
+        [Route("RefList")] public IActionResult RefList() { return View("RefList.cshtml"); }
+        [Route("Form")] public IActionResult Form() { return View("Form.cshtml"); }
+
+        [Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
+        [Route("Ref")]
+        //[Route("Refinery")]
+        //public async Task<IActionResult> Ref() {
+        //	var Ref = await _DBC.RefEmpAp_M.ToListAsync();
+        //	if (Ref == null) { var Ref2 = new RefEmpAp_M() { }; return View("Ref.cshtml", Ref2); }
+
+
+
+
+        //	return View("Ref.cshtml", Ref);
+        //}
+        [Route("shinIps2")]
+        public async Task<IActionResult> shinIps2I()
+        {
+            var Ips = await _dbc.shinIps2.ToListAsync(); return View("Ips.cshtml", Ips);
 
 
 
 
 
 
-		}
+        }
 
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-		public IActionResult Error() {
-			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-		}
-	}
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
 }

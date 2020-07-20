@@ -1,4 +1,4 @@
-﻿@model IEnumerable<_dock200.Models.shinIps2>~~
+﻿@model IEnumerable<_dock200.Models.shinIps2>
 @using _dock200.Models
 @using System.Reflection
 
@@ -12,11 +12,26 @@
 
 <h2>Write the Reflections Code ..</h2>
 
-@*@{ 
-  foreach (var prop in typeof(Model[).GetRuntimeProperties() {
+@Html.DisplayNameFor(model => model.IP)
+@Html.DisplayNameFor(model => model.longitude)
 
 
-      @prop.Name.ToString();
-  }~
+@foreach (PropertyInfo prop in typeof(shinIps2).GetProperties()){
+    
+    prop.Name.ToString();
+        }
 
-}*@
+@foreach (var i in Model)
+{
+
+
+
+}
+@*@{
+      foreach (var prop in typeof(Model[).GetRuntimeProperties() {
+
+
+          @prop.Name.ToString();
+      }~
+
+    }*@

@@ -15,13 +15,17 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using _dock200.Data;
 using _dock200.Models;
-using _dock200.Migrations;
+
 
 namespace _dock200.Models
 {
     public class _shinIps2VM
     {
-  
+        public _shinIps2VM()
+        {
+            
+
+        }
 
         [NotMapped] public ICollection<shinIps2> Ips { get; set; }
         //	[NotMapped] public IEnumerable<shinIps2> Ips { get; set; }

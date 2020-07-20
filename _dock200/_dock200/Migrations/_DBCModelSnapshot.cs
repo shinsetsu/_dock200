@@ -204,25 +204,6 @@ namespace _dock200.Migrations
 
                     b.ToTable("shinSiteMetrics");
                 });
-
-            modelBuilder.Entity("_dock200.Models.shinUserSessionSettings", b =>
-                {
-                    b.Property<string>("io")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool>("DarkStyle")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("IP")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("expirationTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("io");
-
-                    b.ToTable("shinUserSessionSettings");
-                });
 #pragma warning restore 612, 618
         }
     }

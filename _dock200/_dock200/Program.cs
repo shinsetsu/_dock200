@@ -3,28 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _dock200.Data;
-using _dock200.Migrations;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using _dock200.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace _dock200
 {
     public class Program
     {
-        public static void Main(string[] args, _DBC _dbc)
+
+
+        public static void Main(string[] args)
         {
+
 
 
 
             var h = CreateHostBuilder(args).Build();
 
 
-            try { _DBInitalize.Init(_dbc); } catch (Exception e) { throw; }
 
 
 
+             //MiddleWare? 
             h.Run();
 
         }

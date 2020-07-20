@@ -69,21 +69,8 @@ namespace _dock200.Models
 		{
 			public void PageViewDebugIncrement();
 			public void PageViewReleaseIncrement();
-			public void init();
+			
 		}
-
-		public void init(_DBC _DBC)
-		{
-			var metric = new shinSiteMetrics()
-			{
-				pageViewsDebug = 1,
-				pageViewsRelease = 1,
-				pageViewsEx = 1
-			};
-
-			_DBC.Add(metric);
-			_DBC.SaveChanges();
-	}
 
 
 		[Key] [DisplayName("Id}")] public int id { get; set; }

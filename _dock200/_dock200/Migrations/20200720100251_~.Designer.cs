@@ -10,7 +10,7 @@ using _dock200.Data;
 namespace _dock200.Migrations
 {
     [DbContext(typeof(_DBC))]
-    [Migration("20200720075313_~~")]
+    [Migration("20200720100251_~")]
     partial class _
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -205,25 +205,6 @@ namespace _dock200.Migrations
                     b.HasKey("id");
 
                     b.ToTable("shinSiteMetrics");
-                });
-
-            modelBuilder.Entity("_dock200.Models.shinUserSessionSettings", b =>
-                {
-                    b.Property<string>("io")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool>("DarkStyle")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("IP")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("expirationTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("io");
-
-                    b.ToTable("shinUserSessionSettings");
                 });
 #pragma warning restore 612, 618
         }

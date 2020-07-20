@@ -6,6 +6,9 @@ main {
   size: A4;
   
 }
+body {
+    font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
+}
 .download {
   width: 14%;
   height: auto;

@@ -40,7 +40,7 @@ namespace _dock200.Controllers
         {
 
 
-            _DBInitalize.Init(_dbc);
+            //_DBInitalize.Init(_dbc);
 
             base.OnActionExecuted(context);
 

@@ -572,8 +572,9 @@ consoleLog {
         font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
         font-size: 20.3px;
         color: rgb(164 164 164);
-        letter-spacing: 0.01vw;
+        letter-spacing: -0.085vw;
         line-height: 7.5vh;
+        word-spacing: -4.5px;
     }
 
         #introText p:last-of-type {
@@ -1201,7 +1202,8 @@ pre {
     /* margin-left: 15.6vw; */
     padding-right: 2%;
     font-size: 10px !important;
-    color: rgb(255 255 255) !important;
+    
+    color: rgb(100, 100,100) !important;
     letter-spacing: -17.3px !important;
 }
 /*

@@ -116,6 +116,7 @@ namespace _dock200.Models
                 using (WebClient client = new WebClient())
                 {
                     string s = client.DownloadString("http://api.ipstack.com/" + shinIP.IP + "?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
+                    //string s = client.DownloadString("http://api.ipstack.com/24.12.63.159?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
 
                     JObject jObject = JObject.Parse(s);
                     shinIP.type = jObject["type"].ToString();
@@ -129,9 +130,9 @@ namespace _dock200.Models
                     shinIP.longitude = jObject["longitude"].ToString();
                 }
 
-                //using (var context = new _DBC() { }) { 
-                //}
-                    //using (var _dbc = new _DBC(getConnectionString)) { _dbc.Add(shinIP); _dbc.SaveChanges(); }
+                
+                _dbc.Add(shinIP);
+                _dbc.SaveChanges();
                     return true;
             }
             catch (Exception e) { var a = e; return false; }

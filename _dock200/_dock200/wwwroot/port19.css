@@ -13,7 +13,7 @@ body {
     -ms-overflow-style: none;
     border: 2px solid black;
     padding: .05%;
-    border-top: 15px solid #313131!important;
+    border-top: 15px solid #313131 !important;
 }
 
 main {
@@ -21,7 +21,6 @@ main {
     margin-top: 0px;
     min-height: 100vh;
     height: auto;
-
 }
 
 bg img {
@@ -52,10 +51,12 @@ body {
     /*letter-spacing: .1px;*/
     overflow: scroll;
     overflow-X: hidden;
-    letter-spacing: -0.51px;
     font-size: 14px;
     font-weight: 200;
     font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
+    letter-spacing: 1.4px;
+    line-height: 18px;
     /*background: url(/port19/honeycomb33.png) repeat, radial-gradient(#00564bb8 41%, #04112f 100%);*/
     background: url(/honeycomb3.png) repeat, radial-gradient(#06ac9e 41%, #123d64 100%);
     /*//background: url(honeycomb3.png) repeat, radial-gradient( #91c9e2 41%,#6c96a9 100%);*/
@@ -154,6 +155,7 @@ a {
     background-image: url(data:image/gif;base64,R0lGODlhBAAEAKECABERESQkJP///////yH5BAEKAAIALAAAAAAEAAQAAAIFhB6nhlIAOw==) !important;
 }
 
+
 p,
 span {
     font-size: 14px;
@@ -203,7 +205,7 @@ span {
 
 header {
     width: 100%;
-    height:30px;
+    height: 30px;
     text-align: end;
     z-index: 9001;
     top: 0;
@@ -220,10 +222,10 @@ header {
 }
 
 
-    .fa-sun:hover,
-    fa-moon:hover {
-        color: #00ffff;
-    }
+.fa-sun:hover,
+fa-moon:hover {
+    color: #00ffff;
+}
 
 nameTitle {
     font-size: 12px !important;
@@ -475,7 +477,7 @@ consoleLog {
     }
 
     .reccentFocus h3 {
-        font-size: 12px!important;
+        font-size: 12px !important;
         font-weight: 200;
         letter-spacing: 0.05vw;
         line-height: 4.6vh;
@@ -535,17 +537,16 @@ consoleLog {
     }
 
 #introText {
-    font-size: 14px;
+    
     height: 100%;
     color: #a4a4a4;
-    letter-spacing: 0.04vw;
-    line-height: 3.5vh;
+
 }
 
     #introText p b {
         color: #008d79;
         word-spacing: .6vw;
-        line-height: 6vh;
+      
         font-weight: 200;
         font-size: 12px;
     }
@@ -555,8 +556,10 @@ consoleLog {
         }
 
     #introText h1 {
-        font-size: 22px;
+        font-size: 19px;
         color: #00ff14;
+        color: rgb(68, 77, 86);
+        line-height: 31px;
         letter-spacing: .01vw;
         font-weight: 400;
         padding-top: 4%;
@@ -1183,15 +1186,14 @@ pre {
     }
 
 .zjohnson {
-    border-bottom: 2.4vh solid rgb(0 0 0);
     position: static;
-    width: 20%;
+    float: right;
+    width: 30%;
     height: auto;
     opacity: 0.8;
-    margin-top:2%;
-
-
-
+    margin-top: 2%;
+    margin-left: 10%;
+    border-radius: 2px;
 }
 
 .fullTime {
@@ -1329,7 +1331,6 @@ pre {
 
 
     #introText p {
-        font-size: 18px !important;
         word-spacing: normal;
         letter-spacing: normal;
         padding: 0;

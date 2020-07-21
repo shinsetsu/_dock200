@@ -23,7 +23,7 @@ namespace _dock200.Models
     {
         public _shinIps2VM()
         {
-            
+
 
         }
 
@@ -34,6 +34,11 @@ namespace _dock200.Models
 
     }
 
+    public enum IpTypes
+    {
+        [Description("Ipv4")] IP4,
+        [Description("Ipv6")] IP6
+    }
 
 
     public class shinIps2                //https://ipstack.com/quickstart
@@ -42,7 +47,7 @@ namespace _dock200.Models
 
         [Key] [DisplayName("Id}")] public Int64 id { get; set; }
         public string IP { get; set; }
-        public string type { get; set; }
+        public IpTypes? IpType { get; set; }
         public DateTime seenDate { get; set; }
         public int timesSeenDay { get; set; }
         public Int64 timesSeenCount { get; set; }
@@ -63,7 +68,7 @@ namespace _dock200.Models
         public shinIps2()
         {
             IP = "_";
-            this.type = "_";
+            this.IpType = null;
             this.seenDate = DateTime.UtcNow;
             this.timesSeenDay = -1;
             this.timesSeenCount = -1;
@@ -118,22 +123,25 @@ namespace _dock200.Models
                     string s = client.DownloadString("http://api.ipstack.com/" + shinIP.IP + "?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
                     //string s = client.DownloadString("http://api.ipstack.com/24.12.63.159?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
 
-                    JObject jObject = JObject.Parse(s);
-                    shinIP.type = jObject["type"].ToString();
-                    shinIP.countCode = jObject["country_code"].ToString();
-                    shinIP.countName = jObject["country_name"].ToString();
-                    shinIP.stateABR = jObject["region_code"].ToString();
-                    shinIP.state = jObject["region_name"].ToString();
-                    shinIP.city = jObject["city"].ToString();
-                    shinIP.zip = jObject["zip"].ToString();
-                    shinIP.latitude = jObject["latitude"].ToString();
-                    shinIP.longitude = jObject["longitude"].ToString();
+                    JObject jO = JObject.Parse(s);
+
+                    if (jO["type"].ToString() == "ipv4") { shinIP.IpType = IpTypes.IP4; }
+                    if (jO["type"].ToString() == "ipv6") { shinIP.IpType = IpTypes.IP6; }
+
+                    shinIP.countCode = jO["country_code"].ToString();
+                    shinIP.countName = jO["country_name"].ToString();
+                    shinIP.stateABR = jO["region_code"].ToString();
+                    shinIP.state = jO["region_name"].ToString();
+                    shinIP.city = jO["city"].ToString();
+                    shinIP.zip = jO["zip"].ToString();
+                    shinIP.latitude = jO["latitude"].ToString();
+                    shinIP.longitude = jO["longitude"].ToString();
                 }
 
-                
+
                 _dbc.Add(shinIP);
                 _dbc.SaveChanges();
-                    return true;
+                return true;
             }
             catch (Exception e) { var a = e; return false; }
 

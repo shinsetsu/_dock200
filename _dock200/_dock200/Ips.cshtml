@@ -6,27 +6,92 @@
 
     Layout = "~/z____SM________Index.cshtml";
 }
+<img style="float:right;height:10vh;width:auto"  src="RF_CDM.gif"/>
 
+<style>
+    main {
+        width: 90vw;
+        margin: auto;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.58);
+        padding: 2% 5%;
+    }
 
+    flex {
+        width: 30%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        outline: 1px solid red;
+        font-size: 13px;
+    }
 
+    o {
+        padding: .1% .2%;
+    }
 
-<h2>Write the Reflections Code ..</h2>
-
-@Html.DisplayNameFor(model => model.IP)
-@Html.DisplayNameFor(model => model.longitude)
-
-
-@foreach (PropertyInfo prop in typeof(shinIps2).GetProperties()){
-    
-    prop.Name.ToString();
+        o b {
+            background: green;
+            height: 80%;
+            width: auto;
+            color: rgba(0,0,0,0);
         }
 
-@foreach (var i in Model)
-{
+    sm {
+        font-size: 10px;
+        color: #8e8e8e;
+    }
+</style>
+
+<flex style="width:80%; background-color:black;">  <h2>Write the Reflections Code ..</h2>
+    <a style="color: #656565;" href="https://en.wikipedia.org/wiki/Configuration_management_database">CMDB topics to fire on</a> </flex>
 
 
+@*@Html.DisplayNameFor(model => model.IP)
+    @Html.DisplayNameFor(model => model.longitude)*@
 
+
+@*@foreach (PropertyInfo prop in typeof(shinIps2).GetProperties()){
+
+    prop.Name.ToString();
+        }*@
+
+@{ var t = typeof(shinIps2);
+    <h2>    Methods </h2>
+    foreach (var meth in t.GetMethods())
+    {
+        if (!(@meth.Name.Contains("set") || meth.Name.Contains("get")))
+        { <flex>  <o> <b>■</b> Method: </o>  <o>@meth.Name </o> </flex> }
 }
+
+<h2>Constructors</h2>
+foreach (var con in t.GetConstructors())
+{ <flex>
+        @con
+    </flex>}      //foreach (var propValue in t.GetProperty(prop).GetValue()
+
+
+
+<h2>    Properties  </h2>
+foreach (var prop in t.GetProperties())
+{ <flex>
+        <sm>@prop.PropertyType</sm>
+        @prop.Name
+    </flex>}      //foreach (var propValue in t.GetProperty(prop).GetValue()
+@*
+
+    <h2>    Fields  </h2>
+    foreach (var fields in t.GetFields())
+    { <div> @fields.Name </div> }
+
+    foreach (var e in t.GetEnumNames())
+    { <div>   @e     </div> }
+
+*@
+}
+
+
+
 @*@{
       foreach (var prop in typeof(Model[).GetRuntimeProperties() {
 

@@ -68,13 +68,13 @@
         Tooling h1 {
             margin-top: 0;
             padding-top: 1%;
-            padding-right:2%;
-            padding-left:2%;
+            padding-right: 2%;
+            padding-left: 2%;
             width: 100%;
             background-color: gray;
             color: white;
             font-size: small;
-       
+            font-weight:100;
         }
 
         Tooling r {
@@ -166,7 +166,7 @@
 
 
 <style>
-    .objList {
+    .dbList {
         width: 50%;
     }
 </style>
@@ -174,11 +174,16 @@
     <div>
         <h1>dbList</h1>
         <ul>
-            <li>    ___ </li>
-            <li>    ___ </li>
-            <li>    ___ </li>
+            <li>    dbType  dbIp  dbConnectionStr  dbOwner  dbCall</li>
+            <li>    ______  ____  _______________  _______  ______</li>
+
         </ul>
     </div>
+    <Tooling>
+        <r> <sm> List </sm>Package Documentation (Export) <o> <a> .docx   .pdf    .html   .xlsx   .xls    .txt    .csv    .googleDoc  .jpg .png    </a></o> </r>
+        <h1> DB : Tooling </h1>
+
+</Tooling>
 </flex>
 
 <style>
@@ -196,18 +201,27 @@
         </ul>
     </div>
     <Tooling>
-        <r>  objList: Package Documentation (Export) <o> <a> .docx   .pdf    .html   .xlsx   .xls    .txt    .csv    .googleDoc  .jpg .png    </a></o> </r>
+        <r> <sm> List </sm>Package Documentation (Export) <o> <a> .docx   .pdf    .html   .xlsx   .xls    .txt    .csv    .googleDoc  .jpg .png    </a></o> </r>
         <h1> ObjectTooling </h1>
 
         <crud>  <c>  Create</c> <rd> Redefine</rd>      <e>  Edit</e>      <d>  Delete</d></crud>
         <hr />
-        <r>  UpdateList  <o>    Manual</o>   <o>     Auto</o> </r>
+        <r>
+            UpdateList
+            <o>    Manual</o>   <o>     Auto</o>
+        </r>
         <hr />
-        <r>  Export Data Structure (Define Exportees) <o>   asIs</o> <o>   singleTeir<o /> </r>
-        <r>  Package Documentation (Export) <o> <a> .docx   .pdf    .html   .xlsx   .xls    .txt    .csv    .googleDoc  .jpg .png    </a></o> </r>
-        <r>  Mirror Database </r>
-        <r>  Migrate newStrucure (DB Tables - Data) </r>
-        <r>  Migrate sameStructure (Mirror&Migrate) </r>
+        <r>
+            Export Data Structure (Define Exportees)
+            <o>   asIs</o> <o>   singleTeir<o />
+        </r>
+        <r>
+            <sm>ob : </sm>Package Documentation (Export)
+            <o style="outline:1px solid yellow;text-align:right;"> <o> .docx   .pdf    .html   .xlsx   .xls    .txt    .csv    .googleDoc  .jpg .png    </o></o>
+        </r>
+        <r>  Mirror Database    (Define Mirroring) </r>
+        <r>  Migrate newStrucure    <sm>(DB Tables - Data)   (Define Migrate)</sm>   </r>
+        <r>  Migrate sameStructure  <sm>(Mirror&Migrate)     (Define Migrate)</sm>    </r>
         <r>  </r>
 
     </Tooling>

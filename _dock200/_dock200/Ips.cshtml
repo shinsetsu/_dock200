@@ -13,11 +13,11 @@
         margin: auto;
         color: white;
         background-color: rgba(0, 0, 0, 0.58);
-        padding: 2% 5%;
+        padding-top: 2vh;
     }
 
-    flex, flexT {
-        width: 30%;
+    flex, flexT, flexR {
+        width: auto;
         height: auto;
         display: flex;
         justify-content: space-between;
@@ -25,10 +25,84 @@
         font-size: 13px;
     }
 
+    flexT {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        background-color: black;
+        outline: 1px solid orange;
+        padding: .5% 1%;
+    }
+
         flexT a {
             display: block;
+            color: white;
             border-bottom: 1px solid blue;
             width: 100%;
+        }
+
+    flexR {
+        width: auto;
+    }
+
+        flexR div {
+            outline: 1px solid yellow;
+            width: auto;
+            padding: 5px 10px;
+            margin: 2px 2px;
+        }
+
+    Tooling {
+        outline: 1px solid navy;
+        background: rgba(0, 0, 0, 0.42);
+        margin: 4px 4px;
+        width: auto;
+        height: auto;
+        margin: 6% 2%;
+        margin-top: 2%;
+        margin-bottom: 4%;
+        border-radius: 3px;
+        font-weight: 100;
+    }
+
+        Tooling h1 {
+            margin-top: 0;
+            padding-top: 1%;
+            padding-right:2%;
+            padding-left:2%;
+            width: 100%;
+            background-color: gray;
+            color: white;
+            font-size: small;
+       
+        }
+
+        Tooling r {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.18);
+            padding: .5% 1%;
+            padding-bottom: 0;
+        }
+
+            Tooling r:nth-of-type(2n) {
+                background-color: rgba(0, 0, 0, 0.22);
+            }
+
+    crud {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        outline: 1px solid #00539c;
+        margin: 2px 2px;
+    }
+
+        crud > * {
+            width: auto;
+            padding: 0 2%;
+            outline: 1px solid #00ffa1;
         }
 
     o {
@@ -41,6 +115,11 @@
             width: auto;
             color: rgba(0,0,0,0);
         }
+
+    r o {
+        font-size: small;
+        color: #bcbcbc;
+    }
 
     sm {
         font-size: 10px;
@@ -56,18 +135,57 @@
         outline: 1px solid blue;
     }
 
+
     h1 {
         color: white;
     }
 </style>
 
 
-<flexT style="width:80%; background-color:black;">
-    <h2>Write the Reflections Code ..</h2>
-    <a style="color: #656565;" href="https://en.wikipedia.org/wiki/Configuration_management_database">CMDB topics to fire on</a>
-    <a href="https://stackoverflow.com/questions/24041062/know-when-to-retry-or-fail-when-calling-sql-server-from-c">   DatabaseRetries </a>
+<flexT style="">
+    <div>
+        <h1>    CMDB    </h1>
+        <h2>Write the Reflections Code ..</h2>
+    </div>
+    <flexR>
+        <div>
+            <h3>  CMDB Documents  </h3>
+            <a style="color: #656565;" href="https://en.wikipedia.org/wiki/Configuration_management_database">
+                CMDB Definition / Parts
+            </a>
+            <a href="https://stackoverflow.com/questions/24041062/know-when-to-retry-or-fail-when-calling-sql-server-from-c">
+                DatabaseRetries
+            </a>
+        </div>
+        <div>
+            Company Resources
+            <a> Resources</a>
+        </div>
+    </flexR>
 </flexT>
 
+
+<style>
+    .objList {
+        width: 50%;
+    }
+</style>
+<flex class="dbList">
+    <div>
+        <h1>dbList</h1>
+        <ul>
+            <li>    ___ </li>
+            <li>    ___ </li>
+            <li>    ___ </li>
+        </ul>
+    </div>
+</flex>
+
+<style>
+    .objList {
+        width: 50%;
+    }
+</style>
 <flex class="objList">
     <div>
         <h1>objList</h1>
@@ -77,6 +195,22 @@
             <li>    ___ </li>
         </ul>
     </div>
+    <Tooling>
+        <r>  objList: Package Documentation (Export) <o> <a> .docx   .pdf    .html   .xlsx   .xls    .txt    .csv    .googleDoc  .jpg .png    </a></o> </r>
+        <h1> ObjectTooling </h1>
+
+        <crud>  <c>  Create</c> <rd> Redefine</rd>      <e>  Edit</e>      <d>  Delete</d></crud>
+        <hr />
+        <r>  UpdateList  <o>    Manual</o>   <o>     Auto</o> </r>
+        <hr />
+        <r>  Export Data Structure (Define Exportees) <o>   asIs</o> <o>   singleTeir<o /> </r>
+        <r>  Package Documentation (Export) <o> <a> .docx   .pdf    .html   .xlsx   .xls    .txt    .csv    .googleDoc  .jpg .png    </a></o> </r>
+        <r>  Mirror Database </r>
+        <r>  Migrate newStrucure (DB Tables - Data) </r>
+        <r>  Migrate sameStructure (Mirror&Migrate) </r>
+        <r>  </r>
+
+    </Tooling>
 </flex>
 
 <flex class="changeHistory">

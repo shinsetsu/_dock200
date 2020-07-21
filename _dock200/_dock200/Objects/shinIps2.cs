@@ -20,7 +20,105 @@ using System.Data;
 
 namespace _dock200.Models
 {
+    public class oList
+    {
 
+        [NotMapped] _DBC _dbc;
+        [NotMapped]
+        List<string> ob
+        {
+            get
+            {
+                    
+               
+      
+                var dtm = _dbc.Mapping;
+                foreach (var t in dtm.GetTables())
+                {
+                    Console.WriteLine(t.TableName);
+                }
+
+                //_______________
+                //https://stackoverflow.com/questions/3892926/entity-framework-get-list-of-tables
+                // We need dbcontext to access the models
+
+
+                //// Get all the entity types information
+                //var entityTypes = models.GetEntityTypes();
+
+                //// T is Name of class
+                //var entityTypeOfT = entityTypes.First(t => t.ClrType == typeof(T));
+
+                //var tableNameAnnotation = entityTypeOfT.GetAnnotation("Relational:TableName");
+                //var TableName = tableNameAnnotation.Value.ToString();
+                //return TableName;
+                //_______________
+
+
+
+
+
+                //_________THE SQL Route of doing this. ________________________________________
+                //  SELECT TABLE_NAME FROM _d200.INFORMATION_SCHEMA.TABLES
+                //List<string> obList = new List<string>();
+                //var connectionString = ConfigurationManager.ConnectionStrings["_d200"].ConnectionString;
+                //using (var con = new SqlConnection(connectionString))
+                //{
+                //    string qry = "SELECT TABLE_NAME FROM _d200.INFORMATION_SCHEMA.TABLES";
+                //    var cmd = new SqlCommand(qry, con); cmd.CommandType = CommandType.Text;
+
+                //    con.Open();
+                //    using (SqlDataReader objReader = cmd.ExecuteReader())
+                //    {
+                //        if (objReader.HasRows)
+                //        {
+                //            while (objReader.Read())
+                //            {
+                //                //I would also check for DB.Null here before reading the value.
+                //                string item = objReader.GetString(objReader.GetOrdinal("Column1"));
+                //                obList.Add(item);
+                //            }
+                //        }
+
+                //    }//endOf    ■    using (SqlDataReader objReader = cmd.ExecuteReader())
+
+                //}//endOf        ■  using (var con = new SqlConnection(connectionString))
+
+
+
+                return (obList);
+
+
+
+
+
+            }; set;
+        }
+
+    }
+
+    [Table("sys")] // These should probally be st8 mapped as the ob Name is...  No need for 3 names for somwething...
+    public class shinSystem
+    {
+        [Key] [DisplayName("Id}")] public Int64 id { get; set; }
+        public string sysName { get; set; }
+        public string sysDesc { get; set; }
+        public string sysCode { get; set; }
+        public string sysCategory { get; set; }
+        public string opStatus { get; set; }
+        public string sysEnvironment { get; set; }
+        public string sysConditions { get; set; } //Special Instructions or Notes
+        public string sysRecovery { get; set; } //Special Instructions or Notes
+        public string sysStorageReqs { get; set; } //Special Instructions or Notes
+        public string sysSecConfig { get; set; } //Special Instructions or Notes
+
+        public string sysPOC { get; set; }
+        public string sysOwner { get; set; }
+        public string sysHardware { get; set; }
+        public string sysHardwareConfig { get; set; }
+        public string sysSoftware { get; set; }
+
+    }
 
     public class _shinIps2VM
     {
@@ -107,48 +205,8 @@ namespace _dock200.Models
             }
             return rowCount;
         }
-        public List<string> GetObjList()
-        {
 
 
-            List<string> objList = new List<string>();
-            var connectionString = ConfigurationManager.ConnectionStrings["_d200"].ConnectionString;
-            using (var con = new SqlConnection(connectionString))
-            {
-                string qry = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'";
-                var cmd = new SqlCommand(qry, con); cmd.CommandType = CommandType.Text;
-                
-                con.Open();
-                using (SqlDataReader objReader = cmd.ExecuteReader())
-                {
-                    if (objReader.HasRows)
-                    {
-                        while (objReader.Read())
-                        {
-                            //I would also check for DB.Null here before reading the value.
-                            string item = objReader.GetString(objReader.GetOrdinal("Column1"));
-                            objList.Add(item);
-                        }
-                    }
-                    return (objList);
-                }//endOf    ■    using (SqlDataReader objReader = cmd.ExecuteReader())
-
-            }//endOf        ■  using (var con = new SqlConnection(connectionString))
-
-
-
-
-
-            //var connectionString = ConfigurationManager.ConnectionStrings["_d200"].ConnectionString;
-            //        string queryString = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'";
-            //        using (var connection = new SqlConnection(connectionString))
-            //        {
-            //            var command = new SqlCommand(queryString, connection);
-            //            connection.Open();
-            //            objList = (string)command.ExecuteScalar();
-            //        }
-            return objList;
-        }
 
 
         public bool InsertIP(string ip)

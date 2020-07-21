@@ -15,14 +15,18 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using _dock200.Data;
 using _dock200.Models;
-
+using System.Collections;
+using System.Data;
 
 namespace _dock200.Models
 {
+
+
     public class _shinIps2VM
     {
         public _shinIps2VM()
         {
+
 
 
         }
@@ -40,7 +44,7 @@ namespace _dock200.Models
         [Description("Ipv6")] IP6
     }
 
-
+    //https://docs.microsoft.com/en-us/dotnet/standard/attributes/writing-custom-attributes
     public class shinIps2                //https://ipstack.com/quickstart
     {
 
@@ -102,6 +106,48 @@ namespace _dock200.Models
                 rowCount = (int)command.ExecuteScalar();
             }
             return rowCount;
+        }
+        public List<string> GetObjList()
+        {
+
+
+            List<string> objList = new List<string>();
+            var connectionString = ConfigurationManager.ConnectionStrings["_d200"].ConnectionString;
+            using (var con = new SqlConnection(connectionString))
+            {
+                string qry = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'";
+                var cmd = new SqlCommand(qry, con); cmd.CommandType = CommandType.Text;
+                
+                con.Open();
+                using (SqlDataReader objReader = cmd.ExecuteReader())
+                {
+                    if (objReader.HasRows)
+                    {
+                        while (objReader.Read())
+                        {
+                            //I would also check for DB.Null here before reading the value.
+                            string item = objReader.GetString(objReader.GetOrdinal("Column1"));
+                            objList.Add(item);
+                        }
+                    }
+                    return (objList);
+                }//endOf    ■    using (SqlDataReader objReader = cmd.ExecuteReader())
+
+            }//endOf        ■  using (var con = new SqlConnection(connectionString))
+
+
+
+
+
+            //var connectionString = ConfigurationManager.ConnectionStrings["_d200"].ConnectionString;
+            //        string queryString = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'";
+            //        using (var connection = new SqlConnection(connectionString))
+            //        {
+            //            var command = new SqlCommand(queryString, connection);
+            //            connection.Open();
+            //            objList = (string)command.ExecuteScalar();
+            //        }
+            return objList;
         }
 
 

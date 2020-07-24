@@ -120,12 +120,7 @@ namespace _dock200.Models
 
     public class _shinIps2VM
     {
-        public _shinIps2VM()
-        {
-
-
-
-        }
+        public _shinIps2VM() { }
 
         [NotMapped] public ICollection<shinIps2> Ips { get; set; }
         //	[NotMapped] public IEnumerable<shinIps2> Ips { get; set; }
@@ -148,18 +143,18 @@ namespace _dock200.Models
         [Key] [DisplayName("Id}")] public Int64 id { get; set; }
         public string IP { get; set; }
         public IpTypes? IpType { get; set; }
-        public DateTime seenDate { get; set; }
-        public int timesSeenDay { get; set; }
-        public Int64 timesSeenCount { get; set; }
-        public Int64 totalIpsSeen { get; set; }
-        public string countCode { get; set; }
-        public string countName { get; set; }
-        public string stateABR { get; set; }
-        public string state { get; set; }
-        public string city { get; set; }
-        public string zip { get; set; }
-        public string latitude { get; set; }
-        public string longitude { get; set; }
+        public DateTime? seenDate { get; set; }
+        public int? timesSeenDay { get; set; }
+        public Int64? timesSeenCount { get; set; }
+        public Int64? totalIpsSeen { get; set; }
+        public string? countCode { get; set; }
+        public string? countName { get; set; }
+        public string? stateABR { get; set; }
+        public string? state { get; set; }
+        public string? city { get; set; }
+        public string? zip { get; set; }
+        public string? latitude { get; set; }
+        public string? longitude { get; set; }
 
 
         [NotMapped] public _DBC _dbc;
@@ -207,8 +202,10 @@ namespace _dock200.Models
 
 
 
-        public bool InsertIP(string ip)
+        public bool InsertIP(string ip, _DBC _dbc)
         { //Returns True if added, False if not;
+
+
             shinIps2 shinIP = new shinIps2()
             {
                 IP = ip,
@@ -219,26 +216,33 @@ namespace _dock200.Models
             };
 
             try
-            {          //https://ipstack.com/quickstart
-                using (WebClient client = new WebClient())
-                {
-                    string s = client.DownloadString("http://api.ipstack.com/" + shinIP.IP + "?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
-                    //string s = client.DownloadString("http://api.ipstack.com/24.12.63.159?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
+            {
 
-                    JObject jO = JObject.Parse(s);
+                if (ip != "::/")
+                { //https://ipstack.com/quickstart
+                    using (WebClient client = new WebClient())
+                    {
+                        string s = client.DownloadString("http://api.ipstack.com/" + shinIP.IP + "?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
+                        //string s = client.DownloadString("http://api.ipstack.com/24.12.63.159?access_key=3c04ccc15d0b1d91a38baf224bf80dd4");
 
-                    if (jO["type"].ToString() == "ipv4") { shinIP.IpType = IpTypes.IP4; }
-                    if (jO["type"].ToString() == "ipv6") { shinIP.IpType = IpTypes.IP6; }
+                        JObject jO = JObject.Parse(s);
 
-                    shinIP.countCode = jO["country_code"].ToString();
-                    shinIP.countName = jO["country_name"].ToString();
-                    shinIP.stateABR = jO["region_code"].ToString();
-                    shinIP.state = jO["region_name"].ToString();
-                    shinIP.city = jO["city"].ToString();
-                    shinIP.zip = jO["zip"].ToString();
-                    shinIP.latitude = jO["latitude"].ToString();
-                    shinIP.longitude = jO["longitude"].ToString();
+                        if (jO["type"].ToString() == "ipv4") { shinIP.IpType = IpTypes.IP4; }
+                        if (jO["type"].ToString() == "ipv6") { shinIP.IpType = IpTypes.IP6; }
+
+                        shinIP.countCode = jO["country_code"].ToString();
+                        shinIP.countName = jO["country_name"].ToString();
+                        shinIP.stateABR = jO["region_code"].ToString();
+                        shinIP.state = jO["region_name"].ToString();
+                        shinIP.city = jO["city"].ToString();
+                        shinIP.zip = jO["zip"].ToString();
+                        shinIP.latitude = jO["latitude"].ToString();
+                        shinIP.longitude = jO["longitude"].ToString();
+                    }
                 }
+               
+
+
 
 
                 _dbc.Add(shinIP);

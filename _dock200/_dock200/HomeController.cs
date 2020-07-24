@@ -57,7 +57,7 @@ namespace _dock200.Controllers
 
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false; }
 
-            if (false || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
+            if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
             {
 
                 _shinIps2 = new shinIps2();
@@ -65,7 +65,7 @@ namespace _dock200.Controllers
                 ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
                 if (ViewBag.ClientIP != null)
                 {
-                    _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString());
+                    _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _dbc);
                     //ViewBag.IpCount = _shinIps2.CountIpsSeen();
                 }
                 else { ViewBag.IpCount = 0; }

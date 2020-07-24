@@ -20,6 +20,10 @@ namespace _dock200.Data
     //https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-3.1
     public class _DBC : DbContext
     {
+        public _DBC()
+        {
+        }
+
         public _DBC(DbContextOptions<_DBC> options) : base(options) { }
 
 

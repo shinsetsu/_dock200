@@ -25,75 +25,73 @@ namespace _dock200.Models
 
         [NotMapped] _DBC _dbc;
         [NotMapped]
-        List<string> ob
-        {
-            get
-            {
-                    
-               
-      
-                var dtm = _dbc.Mapping;
-                foreach (var t in dtm.GetTables())
-                {
-                    Console.WriteLine(t.TableName);
-                }
-
-                //_______________
-                //https://stackoverflow.com/questions/3892926/entity-framework-get-list-of-tables
-                // We need dbcontext to access the models
+        List<string> ob { get; set; }
+        //{
 
 
-                //// Get all the entity types information
-                //var entityTypes = models.GetEntityTypes();
 
-                //// T is Name of class
-                //var entityTypeOfT = entityTypes.First(t => t.ClrType == typeof(T));
+        //////////////////////////////////var dtm = _dbc.Mapping;
+        //////////////////////////////////foreach (var t in dtm.GetTables())
+        //////////////////////////////////{
+        //////////////////////////////////    Console.WriteLine(t.TableName);
+        //////////////////////////////////}
 
-                //var tableNameAnnotation = entityTypeOfT.GetAnnotation("Relational:TableName");
-                //var TableName = tableNameAnnotation.Value.ToString();
-                //return TableName;
-                //_______________
+        //_______________
+        //https://stackoverflow.com/questions/3892926/entity-framework-get-list-of-tables
+        // We need dbcontext to access the models
+
+
+        //// Get all the entity types information
+        //var entityTypes = models.GetEntityTypes();
+
+        //// T is Name of class
+        //var entityTypeOfT = entityTypes.First(t => t.ClrType == typeof(T));
+
+        //var tableNameAnnotation = entityTypeOfT.GetAnnotation("Relational:TableName");
+        //var TableName = tableNameAnnotation.Value.ToString();
+        //return TableName;
+        //_______________
 
 
 
 
 
-                //_________THE SQL Route of doing this. ________________________________________
-                //  SELECT TABLE_NAME FROM _d200.INFORMATION_SCHEMA.TABLES
-                //List<string> obList = new List<string>();
-                //var connectionString = ConfigurationManager.ConnectionStrings["_d200"].ConnectionString;
-                //using (var con = new SqlConnection(connectionString))
-                //{
-                //    string qry = "SELECT TABLE_NAME FROM _d200.INFORMATION_SCHEMA.TABLES";
-                //    var cmd = new SqlCommand(qry, con); cmd.CommandType = CommandType.Text;
+        //_________THE SQL Route of doing this. ________________________________________
+        //  SELECT TABLE_NAME FROM _d200.INFORMATION_SCHEMA.TABLES
+        //List<string> obList = new List<string>();
+        //var connectionString = ConfigurationManager.ConnectionStrings["_d200"].ConnectionString;
+        //using (var con = new SqlConnection(connectionString))
+        //{
+        //    string qry = "SELECT TABLE_NAME FROM _d200.INFORMATION_SCHEMA.TABLES";
+        //    var cmd = new SqlCommand(qry, con); cmd.CommandType = CommandType.Text;
 
-                //    con.Open();
-                //    using (SqlDataReader objReader = cmd.ExecuteReader())
-                //    {
-                //        if (objReader.HasRows)
-                //        {
-                //            while (objReader.Read())
-                //            {
-                //                //I would also check for DB.Null here before reading the value.
-                //                string item = objReader.GetString(objReader.GetOrdinal("Column1"));
-                //                obList.Add(item);
-                //            }
-                //        }
+        //    con.Open();
+        //    using (SqlDataReader objReader = cmd.ExecuteReader())
+        //    {
+        //        if (objReader.HasRows)
+        //        {
+        //            while (objReader.Read())
+        //            {
+        //                //I would also check for DB.Null here before reading the value.
+        //                string item = objReader.GetString(objReader.GetOrdinal("Column1"));
+        //                obList.Add(item);
+        //            }
+        //        }
 
-                //    }//endOf    ■    using (SqlDataReader objReader = cmd.ExecuteReader())
+        //    }//endOf    ■    using (SqlDataReader objReader = cmd.ExecuteReader())
 
-                //}//endOf        ■  using (var con = new SqlConnection(connectionString))
-
-
-
-                return (obList);
+        //}//endOf        ■  using (var con = new SqlConnection(connectionString))
 
 
 
+        //    return (obList);
 
 
-            }; set;
-        }
+
+
+
+        //}; set;
+        //}
 
     }
 

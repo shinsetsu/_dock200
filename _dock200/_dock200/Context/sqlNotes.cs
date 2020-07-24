@@ -11,6 +11,13 @@ namespace _dock200.Context
     {
         [NotMapped] _DBC _dbc;
 
+        public void getDb()
+        {
+            //using (_dbc)
+            //{
+            //    var books = _dbc.Query.FromSqlRaw("SELECT BookId, Title FROM Books").ToList();
+            //}
+        }
 
 
         //_________________Raw SQL Queries________________________________
@@ -64,37 +71,37 @@ namespace _dock200.Context
 
 
 
-//                //        //_________________
-//        using(var context = new SampleContext())
-//{
-//    var commandText = "INSERT Categories (CategoryName) VALUES (@CategoryName)";
-//    var name = new SqlParameter("@CategoryName", "Test");
-//    context.Database.ExecuteSqlCommand(commandText, name);
-//}
+        //                //        //_________________
+        //        using(var context = new SampleContext())
+        //{
+        //    var commandText = "INSERT Categories (CategoryName) VALUES (@CategoryName)";
+        //    var name = new SqlParameter("@CategoryName", "Test");
+        //    context.Database.ExecuteSqlCommand(commandText, name);
+        //}
 
 
 
 
-//        //        //_________________
-//using(var context = new SampleContext())
-//{
-//    var name = new SqlParameter("@CategoryName", "Test");
-//context.Database.ExecuteSqlCommand("EXEC AddCategory @CategoryName", name);
-//}
+        //        //        //_________________
+        //using(var context = new SampleContext())
+        //{
+        //    var name = new SqlParameter("@CategoryName", "Test");
+        //context.Database.ExecuteSqlCommand("EXEC AddCategory @CategoryName", name);
+        //}
 
 
 
-//         //_________________
-//        using (var context = new SampleContext())
-//using (var command = context.Database.GetDbConnection().CreateCommand())
-//{
-//    command.CommandText = "SELECT * From Table1";
-//    context.Database.OpenConnection();
-//    using (var result = command.ExecuteReader())
-//    {
-//        // do something with result
-//    }
-//}
+        //         //_________________
+        //        using (var context = new SampleContext())
+        //using (var command = context.Database.GetDbConnection().CreateCommand())
+        //{
+        //    command.CommandText = "SELECT * From Table1";
+        //    context.Database.OpenConnection();
+        //    using (var result = command.ExecuteReader())
+        //    {
+        //        // do something with result
+        //    }
+        //}
 
 
 

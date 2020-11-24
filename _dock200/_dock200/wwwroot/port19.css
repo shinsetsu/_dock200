@@ -545,6 +545,7 @@ consoleLog {
 
     #introText p b {
         color: #008d79;
+
         word-spacing: .6vw;
       
         font-weight: 200;
@@ -558,7 +559,7 @@ consoleLog {
     #introText h1 {
         font-size: 19px;
         /* color: rgb(0 255 20); */
-        color: rgb(72 72 72);
+        color: rgb(72, 72, 72);
         line-height: 31px;
         /* letter-spacing: .01vw; */
         font-weight: 400;
@@ -571,7 +572,7 @@ consoleLog {
     #introText span {
         font-family: 'IBM Plex Mono', monospace, 'Open Sans', sans-serif;
         font-size: 20.3px;
-        color: rgb(164 164 164);
+        color: #ff00ebb0;
         letter-spacing: -0.085vw;
         line-height: 7.5vh;
         word-spacing: -4.5px;

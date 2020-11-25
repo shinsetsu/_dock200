@@ -118,5 +118,33 @@ namespace _dock200.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [Route("JT_Company")] public IActionResult JT_Company() { return View("zJT_Company____________________.cshtml"); }
+        [Route("JT_Contact")] public IActionResult JT_Contact() { return View("zJT_Contact____________________.cshtml"); }
+        [Route("JT_EmployeeLogin")] public IActionResult JT_EmployeeLogin() { return View("zJT_EmployeeLogin____________________.cshtml"); }
+        [Route("JTAssociates")] public IActionResult JT_Index() { return View("zJT_Index____________________.cshtml"); }
+        [Route("JT_ReportLogin")] public IActionResult JT_ReportLogin() { return View("zJT_ReportLogin____________________.cshtml"); }
+        [Route("JT_Solutions")] public IActionResult JT_Solutions() { return View("zJT_Solutions____________________.cshtml"); }
+        [Route("JT_Testimonials")] public IActionResult JT_Testimonials() { return View("zJT_Testimonials____________________.cshtml"); }
+
+
+
+
+
+
+
     }
 }

@@ -19,10 +19,33 @@
 
 
     <link href="~/jt.css" rel="stylesheet" />
+
+
+
+    <style>
+
+        html {
+            box-sizing: border-box !important;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+    </style>
 </head>
 
 <body class="body">
 
+
+    <style>
+
+        header {
+            padding: 1vh 2vw;
+            background: rgba(0, 0, 0, 0.08);
+            width: 100vw;
+            height: auto;
+            margin: 0;
+        }
+    </style>
     <header id="header">
         <style>
 
@@ -30,7 +53,7 @@
             .shinsetsu {
                 float: right;
                 font-size: 1.5vh;
-                color: #00ffff;
+                color: #268b69;
                 position: absolute;
                 background-color: black;
                 left: 0;
@@ -38,7 +61,34 @@
                 position: static !important;
             }
         </style>
-        <a class="shinsetsu">           し<br />  ん <br /> せ<br /> つ        </a>
+
+        <a class="shinsetsu">           し<br />  ん <br /> せ<br /> つ        </a>      @*Shi N Set Tsu     -   Good Hearted,... are you?*@
+
+        <style>
+            nameTitle {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row;
+                width: auto;
+                height: auto;
+                background: #2a5487;
+                font-size: 16px;
+                padding:.2vh .4vw;
+                margin:0;
+
+            }
+        </style>
+
+        <nameTitle>
+            <div>                <a href=”tel:+12176842174″> (217) 684-2174</a>                    </div>
+
+            @*<img src="~/JT/facebook-square-brands.svg" />
+                <img src="~/JT/instagram-square-brands.svg" />
+                <img src="~/JT/linkedin-brands.svg" />
+                <img src="~/JT/paper-plane-solid.svg" />
+                <img src="~/JT/twitter-square-brands.svg" />*@
+        </nameTitle>
+
     </header>
 
 
@@ -49,10 +99,33 @@
     <div style="clear:both"></div>
     <main id="main">       @RenderBody() </main>
 
+    <style>
 
+        footer {
+            padding: 1vh 2vw;
+            background: rgba(0, 0, 0, 0.08);
+            width: 100vw;
+            height: auto;
+            margin: 0;
+        }
+    </style>
     <footer>
         footer
+        <br />
+
+
+        <div><a href="JTAssociates" id="JTAssociates">             <i>/</i>JTAssociates - Index </a>                         </div>
+        <div><a href="JT_Company" id="JT_Company">             <i>/</i>JT_Company </a>                         </div>
+        <div><a href="JT_Contact" id="JT_Contact">             <i>/</i>JT_Contact </a>                         </div>
+        <div><a href="JT_EmployeeLogin" id="JT_EmployeeLogin">             <i>/</i>JT_EmployeeLogin </a>                         </div>
+        <div><a href="JTAssociates" id="JTAssociates">             <i>/</i>JTAssociates </a>                         </div>
+        <div><a href="JT_ReportLogin" id="JT_ReportLogin">             <i>/</i>JT_ReportLogin </a>                         </div>
+        <div><a href="JT_Solutions" id="JT_Solutions">             <i>/</i>JT_Solutions </a>                         </div>
+        <div><a href="JT_Testimonials" id="JT_Testimonials">             <i>/</i>JT_Testimonials </a>                         </div>
+
+
     </footer>
+
 
 
 

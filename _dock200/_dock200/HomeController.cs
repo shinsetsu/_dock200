@@ -63,12 +63,10 @@ namespace _dock200.Controllers
             //    _shinIps2 = new shinIps2();
 
             //    ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
-            //    if (ViewBag.ClientIP != null)
-            //    {
+            //    if (ViewBag.ClientIP != null) {
             //        _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _dbc);
             //        //ViewBag.IpCount = _shinIps2.CountIpsSeen();
-            //    }
-            //    else { ViewBag.IpCount = 0; }
+            //    } else { ViewBag.IpCount = 0; }
 
 
 

@@ -16,13 +16,13 @@ namespace _dock200.Controllers
     public class HomeController : Controller
     {
         //private readonly ILogger<HomeController> _logger;
-        private readonly _DBC _dbc;
+        private readonly _DBC _d200DB;
         private readonly IWebHostEnvironment _ENV;
         private shinIps2 _shinIps2;
 
         public HomeController(_DBC dbc, IWebHostEnvironment env)
         {
-            _dbc = dbc; _ENV = env;
+            _d200DB = dbc; _ENV = env;
 
         }
 
@@ -64,16 +64,16 @@ namespace _dock200.Controllers
 
                 ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
                 if (ViewBag.ClientIP != null) {
-                    _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _dbc);
+                    _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _d200DB);
                     //ViewBag.IpCount = _shinIps2.CountIpsSeen();
                 } else { ViewBag.IpCount = 0; }
 
 
 
-                shinSiteMetrics siteMetrics = _dbc.shinSiteMetrics.FirstOrDefault();
-                //siteMetrics.PageEventsIncrement(_dbc);
-                ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_dbc);
-                ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_dbc);
+                shinSiteMetrics siteMetrics = _d200DB.shinSiteMetrics.FirstOrDefault();
+                //siteMetrics.PageEventsIncrement(_d200DB);
+                ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_d200DB);
+                ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_d200DB);
                 ViewBag.Mac = siteMetrics.GetMacAddress();
 
 
@@ -102,7 +102,7 @@ namespace _dock200.Controllers
         [Route("shinIps2")]
         public async Task<IActionResult> shinIps2I()
         {
-            var Ips = await _dbc.shinIps2.ToListAsync(); return View("Ips.cshtml", Ips);
+            var Ips = await _d200DB.shinIps2.ToListAsync(); return View("Ips.cshtml", Ips);
 
 
 

@@ -31,7 +31,7 @@ namespace _dock200
 		{
 			services.AddDbContext<_DBC>(options =>
 			    options.UseSqlServer(
-				  Configuration.GetConnectionString("_DB")));
+				  Configuration.GetConnectionString("_d200DB")));
 
 			services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 			    .AddEntityFrameworkStores<_DBC>();

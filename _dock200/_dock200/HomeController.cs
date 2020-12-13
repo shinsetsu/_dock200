@@ -20,9 +20,9 @@ namespace _dock200.Controllers
         private readonly IWebHostEnvironment _ENV;
         private shinIps2 _shinIps2;
 
-        public HomeController(_DBC dbc, IWebHostEnvironment env)
+        public HomeController(_DBC _dbc, IWebHostEnvironment env)
         {
-            _d200DB = dbc; _ENV = env;
+            _d200DB = _dbc; _ENV = env;
 
         }
 
@@ -52,7 +52,7 @@ namespace _dock200.Controllers
             ViewBag.pageViewsRelease = "";
             ViewBag.ClientIP = "";
             ViewBag.IsDebug = true;
-
+            _DBInitalize.Init(_d200DB);
 
 
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false; }

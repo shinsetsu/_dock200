@@ -18,7 +18,7 @@ namespace _dock200
 {
 	public class Startup
 	{
-		private readonly _DBC _dbc;
+		
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;

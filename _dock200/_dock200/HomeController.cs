@@ -57,48 +57,40 @@ namespace _dock200.Controllers
 
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false; }
 
-            if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
-            {
+            //if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
+            //{
 
-                _shinIps2 = new shinIps2();
+            //    _shinIps2 = new shinIps2();
 
-                ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
-                if (ViewBag.ClientIP != null) {
-                    _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _d200DB);
-                    //ViewBag.IpCount = _shinIps2.CountIpsSeen();
-                } else { ViewBag.IpCount = 0; }
-
-
-
-                shinSiteMetrics siteMetrics = _d200DB.shinSiteMetrics.FirstOrDefault();
-                //siteMetrics.PageEventsIncrement(_d200DB);
-                ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_d200DB);
-                ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_d200DB);
-                ViewBag.Mac = siteMetrics.GetMacAddress();
+            //    ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
+            //    if (ViewBag.ClientIP != null) {
+            //        _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _d200DB);
+            //        //ViewBag.IpCount = _shinIps2.CountIpsSeen();
+            //    } else { ViewBag.IpCount = 0; }
 
 
 
+            //    shinSiteMetrics siteMetrics = _d200DB.shinSiteMetrics.FirstOrDefault();
+            //    //siteMetrics.PageEventsIncrement(_d200DB);
+            //    ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_d200DB);
+            //    ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_d200DB);
+            //    ViewBag.Mac = siteMetrics.GetMacAddress();
 
-            }
+
+
+
+            //}
         }
 
         [Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
-        [Route("StyleTooling")] public IActionResult z_StyleTooling_Firm() { return View("z_StyleTooling_Firm.cshtml"); }
+        
+        //[Route("styleBotRM")] public IActionResult styleBotRM() { return View("z__styleBotRM.cshtml"); }
         [Route("RefList")] public IActionResult RefList() { return View("RefList.cshtml"); }
         [Route("Form")] public IActionResult Form() { return View("Form.cshtml"); }
 
         [Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
-        [Route("Ref")]
-        //[Route("Refinery")]
-        //public async Task<IActionResult> Ref() {
-        //	var Ref = await _DBC.RefEmpAp_M.ToListAsync();
-        //	if (Ref == null) { var Ref2 = new RefEmpAp_M() { }; return View("Ref.cshtml", Ref2); }
 
 
-
-
-        //	return View("Ref.cshtml", Ref);
-        //}
         [Route("shinIps2")]
         public async Task<IActionResult> shinIps2I()
         {

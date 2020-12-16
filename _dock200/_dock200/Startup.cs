@@ -18,7 +18,7 @@ namespace _dock200
 {
 	public class Startup
 	{
-		
+		private readonly _DBC _dbc;
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
@@ -31,7 +31,7 @@ namespace _dock200
 		{
 			services.AddDbContext<_DBC>(options =>
 			    options.UseSqlServer(
-				  Configuration.GetConnectionString("_d200DB")));
+				  Configuration.GetConnectionString("_DB")));
 
 			services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 			    .AddEntityFrameworkStores<_DBC>();

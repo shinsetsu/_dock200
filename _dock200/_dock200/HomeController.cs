@@ -16,13 +16,13 @@ namespace _dock200.Controllers
     public class HomeController : Controller
     {
         //private readonly ILogger<HomeController> _logger;
-        private readonly _DBC _d200DB;
+        private readonly _DBC _dbc;
         private readonly IWebHostEnvironment _ENV;
         private shinIps2 _shinIps2;
 
-        public HomeController(_DBC _dbc, IWebHostEnvironment env)
+        public HomeController(_DBC dbc, IWebHostEnvironment env)
         {
-            _d200DB = _dbc; _ENV = env;
+            _dbc = dbc; _ENV = env;
 
         }
 
@@ -52,7 +52,7 @@ namespace _dock200.Controllers
             ViewBag.pageViewsRelease = "";
             ViewBag.ClientIP = "";
             ViewBag.IsDebug = true;
-            _DBInitalize.Init(_d200DB);
+
 
 
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false; }
@@ -64,16 +64,16 @@ namespace _dock200.Controllers
 
             //    ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
             //    if (ViewBag.ClientIP != null) {
-            //        _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _d200DB);
+            //        _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _dbc);
             //        //ViewBag.IpCount = _shinIps2.CountIpsSeen();
             //    } else { ViewBag.IpCount = 0; }
 
 
 
-            //    shinSiteMetrics siteMetrics = _d200DB.shinSiteMetrics.FirstOrDefault();
-            //    //siteMetrics.PageEventsIncrement(_d200DB);
-            //    ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_d200DB);
-            //    ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_d200DB);
+            //    shinSiteMetrics siteMetrics = _dbc.shinSiteMetrics.FirstOrDefault();
+            //    //siteMetrics.PageEventsIncrement(_dbc);
+            //    ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_dbc);
+            //    ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_dbc);
             //    ViewBag.Mac = siteMetrics.GetMacAddress();
 
 
@@ -83,18 +83,26 @@ namespace _dock200.Controllers
         }
 
         [Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
-        
-        //[Route("styleBotRM")] public IActionResult styleBotRM() { return View("z__styleBotRM.cshtml"); }
+        [Route("StyleTooling")] public IActionResult z_StyleTooling_Firm() { return View("z_StyleTooling_Firm.cshtml"); }
         [Route("RefList")] public IActionResult RefList() { return View("RefList.cshtml"); }
         [Route("Form")] public IActionResult Form() { return View("Form.cshtml"); }
 
         [Route("Resume")] public IActionResult Resume() { return View("z__Resume_________________________.cshtml"); }
+        [Route("Ref")]
+        //[Route("Refinery")]
+        //public async Task<IActionResult> Ref() {
+        //	var Ref = await _DBC.RefEmpAp_M.ToListAsync();
+        //	if (Ref == null) { var Ref2 = new RefEmpAp_M() { }; return View("Ref.cshtml", Ref2); }
 
 
+
+
+        //	return View("Ref.cshtml", Ref);
+        //}
         [Route("shinIps2")]
         public async Task<IActionResult> shinIps2I()
         {
-            var Ips = await _d200DB.shinIps2.ToListAsync(); return View("Ips.cshtml", Ips);
+            var Ips = await _dbc.shinIps2.ToListAsync(); return View("Ips.cshtml", Ips);
 
 
 

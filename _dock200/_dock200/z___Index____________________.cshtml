@@ -6,6 +6,7 @@
 
 @{
     ViewBag.Razorhref = "https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-3.1#razor-syntax";
+    ViewBag.Razorhref = "https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-3.1#razor-syntax";
 }
 @*      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                                          *@
 @*      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                                                  *@
@@ -14,24 +15,16 @@
 
 @{
     Layout = "z____SM________Index.cshtml";
+
 }
 <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 
 <script>if (!document.fullscreenElement) { document.documentElement.requestFullscreen()</script>
 
 <style>
-    ow {
-        display: flex;
-        justify-content: space-around;
-        width: 100vw !important;
-        margin: auto;
-    }
+    ow { display: flex; justify-content: space-around; width: 100vw !important; margin: auto; }
 
-        ow img {
-            width: 99%;
-            height: auto;
-            display: inline-block;
-        }
+        ow img { width: 99%; height: auto; display: inline-block; }
 </style>
 
 @*<ow>
@@ -40,43 +33,50 @@
         <div><img src="~/Wolfram.jpg" style=" outline: 1px solid #21c72d;" /></div>
     </ow>*@
 
-@{string laTeX = "\\LaTeX{} is great at typesetting mathematics." +
-                  " Let $X_1, X_2, \\ldots, X_n$ be a sequence of independent and identically distributed random generics with $\\text{E}[X_i] = \\mu$ and $\\text{Var}[X_i] = \\sigma^2 < \\infty$, and let$$S_n = \\frac{ X_1 + X_2 + \\[c d o t s] + X_n}{ n}= \\frac{ 1}{ n}\\sum_{ i}^{ n}X_i$$denote their mean.Then as $n$ approaches infinity, the random variables $\\sqrt{ n} (S_n - \\mu)$ converge in distribution to a normal $\\mathcal{ N}(0, \\sigma ^ 2)$.<br>        IE BigO(Log(n))";}
-
-<div style="        letter-spacing: 1.4px;
-        width: 46%;
-        border: 1px solid #4a5961;
-        float: right;
-        margin-right: 7%;
-        font-size: 18.1px;
-        line-height: 53.8px;
-        word-spacing: 4.6px;
-        padding: 1% 1%;
-        margin-top: 5%;
-    }
-    ">  @laTeX;</div>
-
-
 <style>
-    social div {
-        padding: .5% 1%;
-    }
-
-    social a {
-        padding-bottom: 0;
-        margin: .5% 1%;
-    }
+    introBar { display: flex; justify-content: space-around; width: 80%; height: auto;margin: auto; margin-top: 2%; margin-bottom: 2%; }
 </style>
-<social>
-    <div>
-        <a href="https://www.facebook.com/eduoard.mozdocks" target="_blank"> facebook.ᶜᵒᵐ/Eduoard.mOZdocks </a>
+<introBar>
+    <div><img src="~/zj.png" style="height:30vw;width:auto;border-radius:3px;" /></div>
 
-        <a href="https://datafatstack.slack.com/" target="_blank"
-           style="font-size: 13px; color: #000000; border-radius: 2px; padding: 0.1% 1%; background: #9a5d0c3d; border: 1px solid #ffffff38;"> ᵈATAfaTstack.SᒪACK.ᶜᵒᵐ/  (Email me for AC) </a>
+    <div style="display:flex;justify-content:center;flex-direction:column;">
+       
+        <div>
+
+            <div>
+                <a href="https://www.facebook.com/eduoard.mozdocks" target="_blank"> facebook.ᶜᵒᵐ/Eduoard.mOZdocks </a>
+                <br />
+                <a href="https://datafatstack.slack.com/" target="_blank"
+                   style="font-size: 13px; color: #000000; border-radius: 2px; padding: 0.1% 1%; background: #9a5d0c3d; border: 1px solid #ffffff38;"> ᵈATAfaTstack.SᒪACK.ᶜᵒᵐ/  (Email me for AC) </a>
+            </div>
+
+
+            @*@{string laTeX = "\\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \\ldots, X_n$ be a sequence of independent and identically distributed random generics with $\\text{E}[X_i] = \\mu$ and $\\text{Var}[X_i] = \\sigma^2 < \\infty$, and let$$S_n = \\frac{ X_1 + X_2 + \\[c d o t s] + X_n}{ n}= \\frac{ 1}{ n}\\sum_{ i}^{ n}X_i$$denote their mean.Then as $n$ approaches infinity, the random variables $\\sqrt{ n} (S_n - \\mu)$ converge in distribution to a normal $\\mathcal{ N}(0, \\sigma ^ 2)$.<br>        IE BigO(Log(n))";}*@
+            @*   @laTeX;*@
+            <p style=" letter-spacing: 1.4px; width: 100%; max-width: 30vw; border: 1px solid #4a5961; font-size: 16.1px; padding: 1% 1%; color: black; line-height: 20px; ">
+                \\LaTeX{} is great at typesetting mathematics.<br />
+                Let $X_1, X_2, \\ldots, X_n$<br />
+                be a sequence of independent and identically distributed <br />
+                random generics with <br />
+                $\\text{E}[X_i] = \\mu$ <br />
+                and $\\text{Var}[X_i] = \\sigma^2 < \\infty$, <br />
+                and let$$S_n = \\frac{ X_1 + X_2 + \\[c d o t s] + X_n}{ n}=<br />
+                \\frac{ 1}{ n}\\sum_{ i}^{ n}X_i$$denote their mean.<br />
+                Then as $n$ approaches infinity,<br />
+                the random variables $\\sqrt{ n} (S_n - \\mu)$<br />
+                converge in distribution to a<br />
+                normal $\\mathcal{ N}(0, \\sigma ^ 2)$.<br>
+                IE BigO(Log(n))
+            </p>
+
+        </div>
     </div>
-</social>
+</introBar>
 
-<img src="~/zj.png" style=" margin-bottom: -26vh;" />
+
+
+
+
 
 <div id="containerA">
 
@@ -104,68 +104,23 @@
                 <div>
 
                     <style>
-                        .pitch {
-                            display: flex;
-                            font-size: 14px;
-                            justify-content: space-between;
-                            flex-direction: column;
-                            height: auto;
-                            width: 100%;
-                            margin: auto;
-                            padding: 0%;
-                            padding-bottom: 2%;
-                            margin: 0;
-                            /*  background-color: rgba(0, 40, 85, .2);
-                        background-color: rgb(244, 244, 242);*/
-                            /*background-image: linear-gradient(90deg, rgba(0, 12, 37, 0.53) 0%, rgba(139, 0, 0, 0) 82%, rgba(230, 0, 0, 0) 100%);*/
-                            background-image: linear-gradient( 90deg, rgb(0 12 37 / 81%) 0%, rgb(60 12 73 / 44%) 82%, rgb(205 0 123 / 28%) 100%);
-                        }
+                        .pitch { display: flex; font-size: 14px; justify-content: space-between; flex-direction: column; height: auto; width: 100%; margin: auto; padding: 0%; padding-bottom: 2%; margin: 0; /*  background-color: rgba(0, 40, 85, .2);
+                        background-color: rgb(244, 244, 242);*/ /*background-image: linear-gradient(90deg, rgba(0, 12, 37, 0.53) 0%, rgba(139, 0, 0, 0) 82%, rgba(230, 0, 0, 0) 100%);*/ background-image: linear-gradient( 90deg, rgb(0 12 37 / 81%) 0%, rgb(60 12 73 / 44%) 82%, rgb(205 0 123 / 28%) 100%); }
 
-                            .pitch h2 {
-                                font-size: 20px;
-                                line-height: 31px;
-                                word-spacing: 4.3px;
-                                letter-spacing: -0.3px;
-                                font-weight: 200;
-                            }
+                            .pitch h2 { font-size: 20px; line-height: 31px; word-spacing: 4.3px; letter-spacing: -0.3px; font-weight: 200; }
 
 
-                            .pitch div {
-                                margin-left: 5%;
-                                margin-right: 10%;
-                            }
+                            .pitch div { margin-left: 5%; margin-right: 10%; }
 
-                                .pitch div p {
-                                    letter-spacing: 0.11px;
-                                    line-height: 20px !important;
-                                }
+                                .pitch div p { letter-spacing: 0.11px; line-height: 20px !important; }
 
-                            .pitch li {
-                                font-size: 11px;
-                                font-weight: 100;
-                                word-spacing: 2.5px;
-                                line-height: 26px;
-                                letter-spacing: 0.5px;
-                                color: rgb(146, 146, 146);
-                                text-shadow: none;
-                            }
+                            .pitch li { font-size: 11px; font-weight: 100; word-spacing: 2.5px; line-height: 26px; letter-spacing: 0.5px; color: rgb(146, 146, 146); text-shadow: none; }
                     </style>
 
                     <div class="pitch">
                         <div>
                             <style>
-                                ._sh {
-                                    position: absolute;
-                                    width: auto;
-                                    height: 100vh;
-                                    opacity: 0.9;
-                                    top: 3.5vh;
-                                    left: 293.4px;
-                                    border-bottom-left-radius: 11px;
-                                    border-bottom-right-radius: 39px;
-                                    transform: scale(-1.6,1);
-                                    border-left: 10vw solid black;
-                                }
+                                ._sh { position: absolute; width: auto; height: 100vh; opacity: 0.9; top: 3.5vh; left: 293.4px; border-bottom-left-radius: 11px; border-bottom-right-radius: 39px; transform: scale(-1.6,1); border-left: 10vw solid black; }
                             </style>
                             @*<p><img src="~/_sh.jpg" class="_sh" /></p>*@
 
@@ -338,19 +293,9 @@
 </script>
 
 <style>
-    gallery {
-        width: 86%;
-        height: auto;
-    }
+    gallery { width: 86%; height: auto; }
 
-        gallery img {
-            width: 24%;
-            height: auto;
-            border: 1px solid rgba(0, 0, 0, 0.45);
-            margin: 3vh 4%;
-            border-radius: 3px;
-            opacity: .9;
-        }
+        gallery img { width: 24%; height: auto; border: 1px solid rgba(0, 0, 0, 0.45); margin: 3vh 4%; border-radius: 3px; opacity: .9; }
 </style>
 
 <gallery>

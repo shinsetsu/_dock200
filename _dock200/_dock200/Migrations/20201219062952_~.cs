@@ -86,7 +86,8 @@ namespace _dock200.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     pageViewsDebug = table.Column<int>(nullable: false),
                     pageViewsRelease = table.Column<int>(nullable: false),
-                    pageViewsEx = table.Column<int>(nullable: false)
+                    EventsFiredRelease = table.Column<int>(nullable: false),
+                    EventsFiredDebug = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

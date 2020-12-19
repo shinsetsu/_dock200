@@ -72,7 +72,7 @@ namespace _dock200.Data {
 
 
       if (!_dbc.shinIps2.Any()) { _dbc.Add(new shinIps2 { IP = "Init" }); }   // Looking if DB has been seeded
-      if (!_dbc.shinSiteMetrics.Any()) { _dbc.Add(new shinSiteMetrics { pageViewsDebug = 1 ,pageViewsRelease = 1 ,pageViewsEx = 1 }); }   // Looking if DB has been seeded
+      if (!_dbc.shinSiteMetrics.Any()) { _dbc.Add(new shinSiteMetrics { pageViewsDebug = 1,pageViewsRelease =1, EventsFiredDebug= 1 }); }   // Looking if DB has been seeded
 
 
 

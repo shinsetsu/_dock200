@@ -10,7 +10,7 @@ using _dock200.Data;
 namespace _dock200.Migrations
 {
     [DbContext(typeof(_DBC))]
-    [Migration("20201218114340_~")]
+    [Migration("20201219062952_~")]
     partial class _
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -193,10 +193,13 @@ namespace _dock200.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("pageViewsDebug")
+                    b.Property<int>("EventsFiredDebug")
                         .HasColumnType("int");
 
-                    b.Property<int>("pageViewsEx")
+                    b.Property<int>("EventsFiredRelease")
+                        .HasColumnType("int");
+
+                    b.Property<int>("pageViewsDebug")
                         .HasColumnType("int");
 
                     b.Property<int>("pageViewsRelease")

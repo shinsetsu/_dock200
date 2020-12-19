@@ -17,7 +17,7 @@ namespace _dock200.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("Sq lServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("_dock200.Models.RefEmpAp_M", b =>
                 {
@@ -191,10 +191,13 @@ namespace _dock200.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("pageViewsDebug")
+                    b.Property<int>("EventsFiredDebug")
                         .HasColumnType("int");
 
-                    b.Property<int>("pageViewsEx")
+                    b.Property<int>("EventsFiredRelease")
+                        .HasColumnType("int");
+
+                    b.Property<int>("pageViewsDebug")
                         .HasColumnType("int");
 
                     b.Property<int>("pageViewsRelease")

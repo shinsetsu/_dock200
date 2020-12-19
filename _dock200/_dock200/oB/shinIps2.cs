@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using _dock200.Data;
 using _dock200.Models;
 using System.Collections;
-using System.Data;
+
 
 namespace _dock200.Models
 {
@@ -219,7 +219,7 @@ namespace _dock200.Models
             try
             {
 
-                if (ip != "::/")
+                if (ip != "::/" && ip != "::1")
                 { //https://ipstack.com/quickstart
                     using (WebClient client = new WebClient())
                     {

@@ -40,12 +40,12 @@ namespace _dock200
 			services.AddRazorPages();
 			services.AddMvc();
 
-			services.AddLiveReload(config =>
-			{
-				// optional - use config instead
-				//config.LiveReloadEnabled = true;
-				//config.FolderToMonitor = Path.GetFullname(Path.Combine(Env.ContentRootPath,"..")) ;
-			});
+			//services.AddLiveReload(config =>
+			//{
+			//	// optional - use config instead
+			//	//config.LiveReloadEnabled = true;
+			//	//config.FolderToMonitor = Path.GetFullname(Path.Combine(Env.ContentRootPath,"..")) ;
+			//});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +55,7 @@ namespace _dock200
 			{
 				app.UseDeveloperExceptionPage();
 				app.UseDatabaseErrorPage();
-				app.UseLiveReload();  //Install-Package WestWind.AspnetCore.LiveReload      ---  This only Require Dotnet.watch.run
+				//app.UseLiveReload();  //Install-Package WestWind.AspnetCore.LiveReload      ---  This only Require Dotnet.watch.run
 			}
 			else
 			{

@@ -10,7 +10,7 @@ using _dock200.Data;
 namespace _dock200.Migrations
 {
     [DbContext(typeof(_DBC))]
-    [Migration("20201219062952_~")]
+    [Migration("20201219070410_~")]
     partial class _
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

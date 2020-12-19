@@ -53,8 +53,7 @@ namespace _dock200.Controllers {
       shinSiteMetrics siteMetrics = _dbc.shinSiteMetrics.FirstOrDefault();
       if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false;
 
-        _dbc.Update(siteMetrics.EventsFiredDebug++);
-        _dbc.SaveChanges();
+     
       }
 
       if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease

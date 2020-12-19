@@ -57,30 +57,30 @@ namespace _dock200.Controllers
 
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development") { ViewBag.IsDebug = true; } else { ViewBag.IsDebug = false; }
 
-            //if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
-            //{
+      if (true || Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")//ToggleThisOffIfYouNeedAFasterReloadDuringDevelopment___SometimesIUseThisInDebug_and_sometimesInRelease
+      {
 
-            //    _shinIps2 = new shinIps2();
+        _shinIps2 = new shinIps2();
 
-            //    ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
-            //    if (ViewBag.ClientIP != null) {
-            //        _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString(), _dbc);
-            //        //ViewBag.IpCount = _shinIps2.CountIpsSeen();
-            //    } else { ViewBag.IpCount = 0; }
-
-
-
-            //    shinSiteMetrics siteMetrics = _dbc.shinSiteMetrics.FirstOrDefault();
-            //    //siteMetrics.PageEventsIncrement(_dbc);
-            //    ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_dbc);
-            //    ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_dbc);
-            //    ViewBag.Mac = siteMetrics.GetMacAddress();
+        ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
+        if (ViewBag.ClientIP != null) {
+          _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString() ,_dbc);
+          //ViewBag.IpCount = _shinIps2.CountIpsSeen();
+        } else { ViewBag.IpCount = 0; }
 
 
 
+        shinSiteMetrics siteMetrics = _dbc.shinSiteMetrics.FirstOrDefault();
+        //siteMetrics.PageEventsIncrement(_dbc);
+        ViewBag.pageViewsDebug = siteMetrics.GetDebugCount(_dbc);
+        ViewBag.pageViewsRelease = siteMetrics.GetReleaseCount(_dbc);
+        ViewBag.Mac = siteMetrics.GetMacAddress();
 
-            //}
-        }
+
+
+
+      }
+    }
 
         [Route("")] public IActionResult Index() { return View("z___Index____________________.cshtml"); }
         [Route("StyleTooling")] public IActionResult z_StyleTooling_Firm() { return View("z_StyleTooling_Firm.cshtml"); }

@@ -1,0 +1,5 @@
+Local SQL 		shinSQL_L  
+
+
+Users:  	shin 	shinsetsu	 both local machine ac
+1 administrator ac. pass set to vsfile

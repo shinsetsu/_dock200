@@ -10,8 +10,8 @@ using _dock200.Data;
 namespace _dock200.Migrations
 {
     [DbContext(typeof(_DBC))]
-    [Migration("20200721061842_~2")]
-    partial class _2
+    [Migration("20201218114340_~")]
+    partial class _
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -160,7 +160,7 @@ namespace _dock200.Migrations
                     b.Property<string>("longitude")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("seenDate")
+                    b.Property<DateTime?>("seenDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("state")
@@ -169,13 +169,13 @@ namespace _dock200.Migrations
                     b.Property<string>("stateABR")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("timesSeenCount")
+                    b.Property<long?>("timesSeenCount")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("timesSeenDay")
+                    b.Property<int?>("timesSeenDay")
                         .HasColumnType("int");
 
-                    b.Property<long>("totalIpsSeen")
+                    b.Property<long?>("totalIpsSeen")
                         .HasColumnType("bigint");
 
                     b.Property<string>("zip")

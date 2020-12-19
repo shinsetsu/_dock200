@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using _dock200.Data;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace _dock200

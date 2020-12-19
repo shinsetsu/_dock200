@@ -147,14 +147,14 @@ namespace _dock200.Models
         public int? timesSeenDay { get; set; }
         public Int64? timesSeenCount { get; set; }
         public Int64? totalIpsSeen { get; set; }
-        public string? countCode { get; set; }
-        public string? countName { get; set; }
-        public string? stateABR { get; set; }
-        public string? state { get; set; }
-        public string? city { get; set; }
-        public string? zip { get; set; }
-        public string? latitude { get; set; }
-        public string? longitude { get; set; }
+        public string countCode { get; set; }
+        public string countName { get; set; }
+        public string stateABR { get; set; }
+        public string state { get; set; }
+        public string city { get; set; }
+        public string zip { get; set; }
+        public string latitude { get; set; }
+        public string longitude { get; set; }
 
 
         [NotMapped] public _DBC _dbc;
@@ -212,7 +212,8 @@ namespace _dock200.Models
                 seenDate = DateTime.UtcNow,
                 timesSeenDay = 1,
                 timesSeenCount = 1,
-                totalIpsSeen = 1
+                totalIpsSeen = 1,
+                
             };
 
             try

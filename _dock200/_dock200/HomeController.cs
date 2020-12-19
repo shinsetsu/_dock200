@@ -26,13 +26,13 @@ namespace _dock200.Controllers
 
         }
 
-        private void initVariables()
-        {
-            //var shinIP2 = new shinIps2(); shinIP2.init();
-            //var metrics = new shinSiteMetrics(); metrics.init();
+        //private void initVariables()
+        //{
+        //    //var shinIP2 = new shinIps2(); shinIP2.init();
+        //    //var metrics = new shinSiteMetrics(); metrics.init();
 
 
-        }
+        //}
 
         /////■■■■  O v e r R i d e s ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
@@ -40,7 +40,7 @@ namespace _dock200.Controllers
         {
 
 
-            //_DBInitalize.Init(_dbc);
+           _DBInitalize.Init(_dbc);
 
             base.OnActionExecuted(context);
 
@@ -62,8 +62,8 @@ namespace _dock200.Controllers
 
         _shinIps2 = new shinIps2();
 
-        ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString();
-        if (ViewBag.ClientIP != null) {
+        if( ( ViewBag.ClientIP = HttpContext.Connection.RemoteIpAddress.ToString()) != null)  { 
+         
           _shinIps2.InsertIP(Request.HttpContext.Connection.RemoteIpAddress.ToString() ,_dbc);
           //ViewBag.IpCount = _shinIps2.CountIpsSeen();
         } else { ViewBag.IpCount = 0; }

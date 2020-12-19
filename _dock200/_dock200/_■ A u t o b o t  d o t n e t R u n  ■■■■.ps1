@@ -1,4 +1,4 @@
-﻿  Start-Process "chrome.exe" "https://localhost:5001	"
+﻿  #Start-Process "chrome.exe" "https://localhost:5001	"
 
 	
   #AWS server access in a tab...
